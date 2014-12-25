@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MVC.Grid</title>
+
+    @Styles.Render("~/Content/JQueryUI/Bundle")
+    @Styles.Render("~/Content/Bootstrap/Bundle")
+    @Styles.Render("~/Content/Shared/Bundle")
+</head>
+<body>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>@DateTime.Now.Year &copy; NonFactors</p>
+            <p>All rights reserved.</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/Scripts/JQuery/Bundle")
+    @Scripts.Render("~/Scripts/Bootstrap/Bundle")
+    @Scripts.Render("~/Scripts/JQueryUI/Bundle")
+    @Scripts.Render("~/Scripts/Shared/Bundle")
+</body>
+</html>
