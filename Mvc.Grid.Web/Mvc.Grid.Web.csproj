@@ -101,6 +101,7 @@
     <Content Include="Content\Bootstrap\Fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Content\Bootstrap\Fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Content\Bootstrap\Fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Images\pattern.png" />
     <Content Include="Scripts\Bootstrap\bootstrap.js" />
     <Content Include="Scripts\JQueryUI\jquery-ui.js" />
     <Content Include="Scripts\JQuery\jquery.js" />

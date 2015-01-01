@@ -3,20 +3,51 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MVC.Grid</title>
+    <title>@ViewBag.Title</title>
 
     @Styles.Render("~/Content/JQueryUI/Bundle")
     @Styles.Render("~/Content/Bootstrap/Bundle")
     @Styles.Render("~/Content/Shared/Bundle")
 </head>
 <body>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>@DateTime.Now.Year &copy; NonFactors</p>
-            <p>All rights reserved.</p>
-        </footer>
+    <header class="navbar">
+        <div class="container-fluid expanded-panel">
+            <div class="row">
+                <div id="logo" class="col-xs-12 col-sm-2">
+                    <a href="/">MVC.Grid</a>
+                </div>
+                <div id="top-panel" class="col-xs-12 col-sm-10">
+                    <div class="row">
+                        <div class="col-xs-8 col-sm-4">
+                            <div id="search">
+                                <input type="text" placeholder="search" />
+                                <i class="fa fa-search"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div id="main" class="container-fluid">
+        <div class="row">
+            <div id="sidebar-left" class="col-xs-2 col-sm-2">
+                <ul class="nav main-menu">
+                    <li>
+                        <a href="/">
+                            <i class="fa fa-dashboard"></i>
+                            <span class="hidden-xs">Home</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div id="content" class="col-xs-12 col-sm-10">
+                <div id="ajax-content">
+                    @RenderBody()
+                </div>
+            </div>
+        </div>
     </div>
 
     @Scripts.Render("~/Scripts/JQuery/Bundle")
