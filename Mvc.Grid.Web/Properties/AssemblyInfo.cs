@@ -3,8 +3,8 @@ using System.Resources;
 using System.Runtime.InteropServices;
 
 [assembly: ComVisible(false)]
-[assembly: AssemblyTitle("Mvc.Grid.Web")]
-[assembly: AssemblyProduct("Mvc.Grid.Web")]
+[assembly: AssemblyTitle("NonFactors.Mvc.Grid.Web")]
+[assembly: AssemblyProduct("NonFactors.Mvc.Grid.Web")]
 [assembly: AssemblyCompany("NonFactors")]
 [assembly: AssemblyCopyright("Copyright © NonFactors")]
 [assembly: NeutralResourcesLanguage("en")]

@@ -1,6 +1,6 @@
 ﻿using System.Web.Mvc;
 
-namespace Mvc.Grid.Web.Controllers
+namespace NonFactors.Mvc.Grid.Web.Controllers
 {
     public class HomeController : Controller
     {

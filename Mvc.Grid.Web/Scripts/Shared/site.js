@@ -9,4 +9,8 @@
             }
         }
     });
+
+    $('.example-code .show-code').on('click', function (e) {
+        $(this).parent().find('.code').toggle();
+    });
 });

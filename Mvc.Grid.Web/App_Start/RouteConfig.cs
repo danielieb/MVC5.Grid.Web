@@ -1,7 +1,7 @@
 ﻿using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace Mvc.Grid.Web
+namespace NonFactors.Mvc.Grid.Web
 {
     public class RouteConfig
     {

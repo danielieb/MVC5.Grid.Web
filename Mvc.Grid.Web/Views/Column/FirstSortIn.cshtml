@@ -1,0 +1,53 @@
+﻿@model IEnumerable<PersonModel>
+
+@{
+    ViewBag.Title = "Column » First sort in";
+}
+
+<ul class="top-nav">
+    <li>Column »</li>
+    <li>First sort in</li>
+</ul>
+<hr>
+
+<div class="doc">
+    <div id="getting-started" class="section">
+        <h2>Description</h2>
+        <p>
+            Specifies which sort order should be used on first column sort.
+        </p>
+        <h2>Remarks</h2>
+        <p>By default, first column sort is made in ascending order.</p>
+        <p>Specifying first sort order will change the default behaviour to specified one.</p>
+        <h2>Examples</h2>
+        <pre class="example-code"><a class="show-code">Show/Hide the code...</a>
+<span class="code">
+@@(
+    Html
+        .Grid(Model)
+        .Build(columns =>
+        {
+            columns.Add(model => model.Name).Titled(<span class="str">"Name"</span>).Sortable(<span class="kwd">true</span>).FirstSortIn(<span class="cls">GridSortOrder</span>.Desc);
+            columns.Add(model => model.Surname).Titled(<span class="str">"Surname"</span>)).Sortable(<span class="kwd">true</span>);
+
+            columns.Add(model => model.Age).Titled(<span class="str">"Age"</span>);
+            columns.Add(model => model.Birthday).Titled(<span class="str">"Birth date"</span>);
+            columns.Add(model => model.IsWorking).Titled(<span class="str">"Employed"</span>);
+        })
+)</span></pre>
+    </div>
+</div>
+
+@(
+ Html
+        .Grid(Model)
+        .Build(columns =>
+        {
+            columns.Add(model => model.Name).Titled("Name").Sortable(true).FirstSortIn(GridSortOrder.Desc);
+            columns.Add(model => model.Surname).Titled("Surname").Sortable(true);
+
+            columns.Add(model => model.Age).Titled("Age");
+            columns.Add(model => model.Birthday).Titled("Birth date");
+            columns.Add(model => model.IsWorking).Titled("Employed");
+        })
+)
