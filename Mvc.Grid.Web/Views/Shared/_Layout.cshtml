@@ -42,6 +42,44 @@
                             <span class="hidden-xs">Home</span>
                         </a>
                     </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">
+                            <i class="fa fa-bar-chart-o"></i>
+                            <span class="hidden-xs">Column</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                @Html.ActionLink("Rendering as value", "RenderedAs", "Column")
+                            </li>
+                            <li>
+                                @Html.ActionLink("Formatting values", "Formatted", "Column")
+                            </li>
+                            <li>
+                                @Html.ActionLink("Encoding values", "Encoded", "Column")
+                            </li>
+                            <li>
+                                @Html.ActionLink("Header title", "Titled", "Column")
+                            </li>
+                            <li>
+                                @Html.ActionLink("Filtering", "Filterable", "Column")
+                            </li>
+                            <li>
+                                @Html.ActionLink("Filter types", "FilteredAs", "Column")
+                            </li>
+                            <li>
+                                @Html.ActionLink("First sort dir", "FirstSortIn", "Column")
+                            </li>
+                            <li>
+                                @Html.ActionLink("Sorting", "Sortable", "Column")
+                            </li>
+                            <li>
+                                @Html.ActionLink("Styling", "Css", "Column")
+                            </li>
+                            <li>
+                                @Html.ActionLink("Name", "Named", "Column")
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
             <div id="content" class="col-xs-12 col-sm-10">
