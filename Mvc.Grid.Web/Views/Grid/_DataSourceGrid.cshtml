@@ -1,0 +1,16 @@
+﻿@model IEnumerable<PersonModel>
+
+@(
+ Html
+        .Grid(Model)
+        .Build(columns =>
+        {
+            columns.Add(model => model.Name).Titled("Name").Sortable(true);
+            columns.Add(model => model.Surname).Titled("Surname").Sortable(true);
+
+            columns.Add(model => model.Age).Titled("Age").Sortable(true);
+            columns.Add(model => model.Birthday).Titled("Birth date").Sortable(true);
+            columns.Add(model => model.IsWorking).Titled("Employed").Sortable(true);
+        })
+        .DataSourceAction("GridPartial")
+)
