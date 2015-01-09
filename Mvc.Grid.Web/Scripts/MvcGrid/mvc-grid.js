@@ -45,6 +45,8 @@ var MvcGrid = (function () {
             this.applyPaging($(pages[ind]));
         }
 
+        this.rowClicked = opt.rowClicked;
+        this.bindGridEvents();
         this.cleanGrid(grid);
     }
 
@@ -241,6 +243,25 @@ var MvcGrid = (function () {
             return newParams.join('&');
         },
 
+        bindGridEvents: function () {
+            var grid = this;
+            this.element.find('.mvc-grid-row').bind('click.mvcgrid', function () {
+                if (grid.rowClicked) {
+                    var cells = $(this).find('td');
+                    var row = [];
+
+                    for (var ind = 0; ind < grid.columns.length; ind++) {
+                        var column = grid.columns[ind];
+                        if (cells.length > ind) {
+                            row[column.name] = $(cells[ind]).text();
+                        }
+                    }
+
+                    grid.rowClicked(grid, row);
+                }
+            });
+        },
+
         cleanHeader: function (column) {
             var header = column.header;
             header.removeAttr('data-name');
@@ -387,17 +408,17 @@ var MvcGridNumberFilter = (function () {
             value.bind('keyup.mvcgrid', function (e) {
                 column.filter.val = this.value;
                 if (filter.isValid(this.value)) {
-                    $(this).removeClass("invalid");
+                    $(this).removeClass('invalid');
                     if (e.keyCode == 13) {
                         popup.find('.mvc-grid-filter-apply').click();
                     }
                 } else {
-                    $(this).addClass("invalid");
+                    $(this).addClass('invalid');
                 }
             });
 
             if (!filter.isValid(column.filter.val)) {
-                value.addClass("invalid");
+                value.addClass('invalid');
             }
         },
         bindApply: function (grid, column, popup) {

@@ -1,4 +1,5 @@
-﻿using System.Web.Mvc;
+﻿using NonFactors.Mvc.Grid.Web.Context;
+using System.Web.Mvc;
 
 namespace NonFactors.Mvc.Grid.Web.Controllers
 {
@@ -7,7 +8,13 @@ namespace NonFactors.Mvc.Grid.Web.Controllers
         [HttpGet]
         public ActionResult Index()
         {
-            return View();
+            return View(PeopleRepository.GetPeople());
+        }
+
+        [HttpGet]
+        public ActionResult Installation()
+        {
+            return View(PeopleRepository.GetPeople());
         }
     }
 }
