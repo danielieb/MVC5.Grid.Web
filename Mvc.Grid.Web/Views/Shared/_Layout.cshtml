@@ -61,6 +61,9 @@
                                 @Html.ActionLink("Empty grid text", "Empty", "Grid")
                             </li>
                             <li>
+                                @Html.ActionLink("Localization", "Localization", "Grid")
+                            </li>
+                            <li>
                                 @Html.ActionLink("Filtering", "Filterable", "Grid")
                             </li>
                             <li>
@@ -137,5 +140,6 @@
     @Scripts.Render("~/Scripts/JQueryUI/Bundle")
     @Scripts.Render("~/Scripts/MvcGrid/Bundle")
     @Scripts.Render("~/Scripts/Shared/Bundle")
+    @RenderSection("scripts", false)
 </body>
 </html>

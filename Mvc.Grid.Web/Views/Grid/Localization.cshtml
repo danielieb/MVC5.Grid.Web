@@ -1,0 +1,89 @@
+﻿@model IEnumerable<PersonModel>
+
+@{
+    ViewBag.Title = "Grid » Localization";
+}
+
+<ul class="top-nav">
+    <li>Grid »</li>
+    <li>Localization</li>
+</ul>
+<hr>
+
+<div class="doc">
+    <div id="getting-started" class="section">
+        <h2>Description</h2>
+        <p>
+            Grid client side filtering texts can be loclaized by overriding $.fn.mvcgrid.lang object after including grid scripts.
+        </p>
+        <h2>Remarks</h2>
+        <p>By default grid texts are written in English.</p>
+        <p>Header titles can be localized using C# resources files.</p>
+        <h2>Examples</h2>
+        <pre class="example-code"><a class="show-code">Show/Hide the code...</a>
+<span class="code">
+@@(
+    Html
+        .Grid(Model)
+        .Build(columns =>
+        {
+            columns.Add(model => model.Name).Titled(<span class="str">"Nom"</span>);
+            columns.Add(model => model.Surname).Titled(<span class="str">"Nom de famille"</span>);
+            columns.Add(model => model.Age).Titled(<span class="str">"Âge"</span>);
+            columns.Add(model => model.Birthday).Titled(<span class="str">"Date de naissance"</span>);
+            columns.Add(model => model.IsWorking).Titled(<span class="str">"Employé"</span>);
+        })
+        .Filterable()
+        .Soratable()
+)
+&lt;script&gt;
+    $.fn.mvcgrid.lang = {
+        Text: {
+            Contains: <span class="str">'Contient'</span>,
+            Equals: <span class="str">'Egale'</span>,
+            StartsWith: <span class="str">'Commence par'</span>,
+            EndsWith: <span class="str">'Fini par'</span>
+        },
+        Number: {
+            Equals: <span class="str">'Egale'</span>,
+            LessThan: <span class="str">'Inférieur à'</span>,
+            GreaterThan: <span class="str">'Supérieur à'</span>,
+            LessThanOrEqual: <span class="str">'Inférieur ou égale à'</span>,
+            GreaterThanOrEqual: <span class="str">'Supérieur ou égale à'</span>
+        },
+        Date: {
+            Equals: <span class="str">'Egale'</span>,
+            LessThan: <span class="str">'Inférieur à'</span>,
+            GreaterThan: <span class="str">'Supérieur à'</span>,
+            LessThanOrEqual: <span class="str">'Inférieur ou égale à'</span>,
+            GreaterThanOrEqual: <span class="str">'Supérieur ou égale à'</span>
+        },
+        Boolean: {
+            Yes: <span class="str">'Oui'</span>,
+            No: <span class="str">'Non'</span>
+        }
+    };
+&lt;/script&gt;
+</span></pre>
+    </div>
+</div>
+
+@(
+ Html
+        .Grid(Model)
+        .Build(columns =>
+        {
+            columns.Add(model => model.Name).Titled("Nom");
+            columns.Add(model => model.Surname).Titled("Nom de famille");
+
+            columns.Add(model => model.Age).Titled("Âge");
+            columns.Add(model => model.Birthday).Titled("Date de naissance");
+            columns.Add(model => model.IsWorking).Titled("Employé");
+        })
+        .Filterable()
+        .Sortable()
+)
+
+@section scripts {
+    <script src="~/Scripts/MvcGrid/Cultures/mvc-grid.culture.fr.js"></script>
+}

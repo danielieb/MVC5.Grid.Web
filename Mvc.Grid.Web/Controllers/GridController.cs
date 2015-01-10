@@ -72,5 +72,11 @@ namespace NonFactors.Mvc.Grid.Web.Controllers
         {
             return View(PeopleRepository.GetPeople());
         }
+
+        [HttpGet]
+        public ActionResult Localization()
+        {
+            return View(PeopleRepository.GetPeople());
+        }
     }
 }

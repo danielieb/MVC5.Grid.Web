@@ -115,6 +115,7 @@
     <Content Include="Scripts\Bootstrap\bootstrap.js" />
     <Content Include="Scripts\JQueryUI\jquery-ui.js" />
     <Content Include="Scripts\JQuery\jquery.js" />
+    <Content Include="Scripts\MvcGrid\Cultures\mvc-grid.culture.fr.js" />
     <Content Include="Scripts\MvcGrid\mvc-grid.js" />
     <Content Include="Scripts\Shared\site.js" />
     <Content Include="Scripts\_references.js" />
@@ -201,7 +202,10 @@
     <Content Include="Views\Grid\Pageable.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Home\Instalattion.cshtml" />
+    <Content Include="Views\Home\Installation.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Grid\Localization.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
