@@ -1,14 +1,14 @@
 ﻿@model IEnumerable<PersonModel>
 
 @{
-    ViewBag.Title = "MVC.Grid";
+    ViewBag.Title = "Grid's empty text";
 }
 
 <div class="example content-block">
     <div class="widget">
         <div class="widget-header">
             <i class="fa fa-bars"></i>
-            Quick start
+            Grid with no rows
             <span class="widget-buttons">
                 <i class="content-toggle"></i>
             </span>
@@ -26,9 +26,9 @@
                         columns.Add(model => model.Birthday).Titled("Birth date");
                         columns.Add(model => model.IsWorking).Titled("Employed");
                     })
-                    .Filterable()
-                    .Sortable()
+                    .Empty("No data found")
             )
+
         </div>
     </div>
 </div>
@@ -56,8 +56,7 @@
             columns.Add(model => model.Birthday).Titled(<span class="str">"Birth date"</span>);
             columns.Add(model => model.IsWorking).Titled(<span class="str">"Employed"</span>);
         })
-        .Filterable()
-        .Sortable()
+        .Empty(<span class="str">"No data found"</span>)
 )
 </code>
 </pre>

@@ -97,14 +97,6 @@ namespace NonFactors.Mvc.Grid.Web.Context
                     Age = (Int32)(DateTime.Now - new DateTime(1988, 01, 05)).TotalDays / 365,
                     Birthday = new DateTime(1988, 01, 05),
                     IsWorking = true
-                },
-                new PersonModel
-                {
-                    Name = "Rikki",
-                    Surname = "Mattison",
-
-                    Age = (Int32)(DateTime.Now - new DateTime(2000, 10, 12)).TotalDays / 365,
-                    Birthday = new DateTime(2000, 10, 12)
                 }
             };
         }

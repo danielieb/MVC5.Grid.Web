@@ -1,27 +1,51 @@
 ﻿@model IEnumerable<PersonModel>
 
 @{
-    ViewBag.Title = "Grid » Localization";
+    ViewBag.Title = "Grid localization";
 }
 
-<ul class="top-nav">
-    <li>Grid »</li>
-    <li>Localization</li>
-</ul>
-<hr>
+<div class="example content-block">
+    <div class="widget">
+        <div class="widget-header">
+            <i class="fa fa-bars"></i>
+            Localized grid
+            <span class="widget-buttons">
+                <i class="content-toggle"></i>
+            </span>
+        </div>
+        <div class="widget-content">
+            @(
+ Html
+                    .Grid(Model)
+                    .Build(columns =>
+                    {
+                        columns.Add(model => model.Name).Titled("Nom");
+                        columns.Add(model => model.Surname).Titled("Nom de famille");
 
-<div class="doc">
-    <div id="getting-started" class="section">
-        <h2>Description</h2>
-        <p>
-            Grid client side filtering texts can be loclaized by overriding $.fn.mvcgrid.lang object after including grid scripts.
-        </p>
-        <h2>Remarks</h2>
-        <p>By default grid texts are written in English.</p>
-        <p>Header titles can be localized using C# resources files.</p>
-        <h2>Examples</h2>
-        <pre class="example-code"><a class="show-code">Show/Hide the code...</a>
-<span class="code">
+                        columns.Add(model => model.Age).Titled("Âge");
+                        columns.Add(model => model.Birthday).Titled("Date de naissance");
+                        columns.Add(model => model.IsWorking).Titled("Employé");
+                    })
+                    .Filterable()
+                    .Sortable()
+            )
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6">
+        <div class="example-code content-block">
+            <div class="widget">
+                <div class="widget-header">
+                    <i class="fa fa-code"></i>
+                    Code
+                    <span class="widget-buttons">
+                        <i class="content-toggle"></i>
+                    </span>
+                </div>
+                <div class="widget-content">
+<pre>
+<code>
 @@(
     Html
         .Grid(Model)
@@ -29,6 +53,7 @@
         {
             columns.Add(model => model.Name).Titled(<span class="str">"Nom"</span>);
             columns.Add(model => model.Surname).Titled(<span class="str">"Nom de famille"</span>);
+            
             columns.Add(model => model.Age).Titled(<span class="str">"Âge"</span>);
             columns.Add(model => model.Birthday).Titled(<span class="str">"Date de naissance"</span>);
             columns.Add(model => model.IsWorking).Titled(<span class="str">"Employé"</span>);
@@ -36,6 +61,25 @@
         .Filterable()
         .Soratable()
 )
+</code>
+</pre>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="example-code content-block">
+            <div class="widget">
+                <div class="widget-header">
+                    <i class="fa fa-code"></i>
+                    Code
+                    <span class="widget-buttons">
+                        <i class="content-toggle"></i>
+                    </span>
+                </div>
+                <div class="widget-content">
+<pre>
+<code>
 &lt;script&gt;
     $.fn.mvcgrid.lang = {
         Text: {
@@ -64,25 +108,13 @@
         }
     };
 &lt;/script&gt;
-</span></pre>
+</code>
+</pre>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
-
-@(
- Html
-        .Grid(Model)
-        .Build(columns =>
-        {
-            columns.Add(model => model.Name).Titled("Nom");
-            columns.Add(model => model.Surname).Titled("Nom de famille");
-
-            columns.Add(model => model.Age).Titled("Âge");
-            columns.Add(model => model.Birthday).Titled("Date de naissance");
-            columns.Add(model => model.IsWorking).Titled("Employé");
-        })
-        .Filterable()
-        .Sortable()
-)
 
 @section scripts {
     <script src="~/Scripts/MvcGrid/Cultures/mvc-grid.culture.fr.js"></script>

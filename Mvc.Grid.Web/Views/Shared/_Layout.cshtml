@@ -5,133 +5,87 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title</title>
 
-    <link href='http://fonts.googleapis.com/css?family=Noto+Sans' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
     @Styles.Render("~/Content/JQueryUI/Bundle")
     @Styles.Render("~/Content/Bootstrap/Bundle")
+    @Styles.Render("~/Content/FontAwesome/Bundle")
     @Styles.Render("~/Content/MvcGrid/Bundle")
     @Styles.Render("~/Content/Shared/Bundle")
 </head>
 <body>
-    <header class="navbar">
-        <div class="container-fluid expanded-panel">
-            <div class="row">
-                <div id="logo" class="col-xs-12 col-sm-2">
-                    <a href="/">MVC.Grid</a>
-                </div>
-                <div id="top-panel" class="col-xs-12 col-sm-10">
-                    <div class="row">
-                        <div class="col-xs-8 col-sm-4">
-                            <div id="search">
-                                <input type="text" placeholder="search" />
-                                <i class="fa fa-search"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
+    <div class="row">
+        <div class="col-md-2">
+            <div class="sidebar content-block">
+                <ul>
+                    <li>
+                        @Html.ActionLink("Quick start", "Index", "Home")
+                    </li>
+                    <li>
+                        @Html.ActionLink("Installation", "Installation", "Home")
+                    </li>
+                    <li>
+                        @Html.ActionLink("Filtering", "Filtering", "Grid")
+                    </li>
+                    <li>
+                        @Html.ActionLink("Sorting", "Sorting", "Grid")
+                    </li>
+                    <li>
+                        @Html.ActionLink("Styling", "Styling", "Grid")
+                    </li>
+                    <li>
+                        @Html.ActionLink("Ajax", "Ajax", "Grid")
+                    </li>
+                    <li>
+                        @Html.ActionLink("Empty text", "EmptyText", "Grid")
+                    </li>
+                    <li>
+                        @Html.ActionLink("Multiple", "Multiple", "Grid")
+                    </li>
+                    <li>
+                        @Html.ActionLink("Processing", "RowProcessing", "Grid")
+                    </li>
+                    <li>
+                        @Html.ActionLink("Row styling", "RowStyling", "Grid")
+                    </li>
+                    <li>
+                        @Html.ActionLink("Localization", "Localization", "Grid")
+                    </li>
+                    <li>
+                        @Html.ActionLink("Paging", "Paging", "Grid")
+                    </li>
 
-    <div id="main" class="container-fluid">
-        <div class="row">
-            <div id="sidebar-left" class="col-xs-2 col-sm-2">
-                <ul class="nav main-menu">
                     <li>
-                        <a href="/">
-                            <i class="fa fa-dashboard"></i>
-                            <span class="hidden-xs">Home</span>
-                        </a>
+                        @Html.ActionLink("Value rendering", "RenderingValue", "Column")
                     </li>
                     <li>
-                        <a href="@Url.Action("Installation", "Home")">
-                            <i class="fa fa-dashboard"></i>
-                            <span class="hidden-xs">Installation</span>
-                        </a>
+                        @Html.ActionLink("Formatting", "Formatting", "Column")
                     </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle">
-                            <i class="fa fa-bar-chart-o"></i>
-                            <span class="hidden-xs">Grid</span>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                @Html.ActionLink("Building columns", "Build", "Grid")
-                            </li>
-                            <li>
-                                @Html.ActionLink("Empty grid text", "Empty", "Grid")
-                            </li>
-                            <li>
-                                @Html.ActionLink("Localization", "Localization", "Grid")
-                            </li>
-                            <li>
-                                @Html.ActionLink("Filtering", "Filterable", "Grid")
-                            </li>
-                            <li>
-                                @Html.ActionLink("Name", "Named", "Grid")
-                            </li>
-                            <li>
-                                @Html.ActionLink("Paging", "Pageable", "Grid")
-                            </li>
-                            <li>
-                                @Html.ActionLink("Sorting", "Sortable", "Grid")
-                            </li>
-                            <li>
-                                @Html.ActionLink("Processing rows", "ProcessWith", "Grid")
-                            </li>
-                            <li>
-                                @Html.ActionLink("Row styling", "RowCss", "Grid")
-                            </li>
-                            <li>
-                                @Html.ActionLink("Styling", "Css", "Grid")
-                            </li>
-                            <li>
-                                @Html.ActionLink("Ajax", "DataSource", "Grid")
-                            </li>
-                        </ul>
+                    <li>
+                        @Html.ActionLink("Encoding", "Encoding", "Column")
                     </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle">
-                            <i class="fa fa-bar-chart-o"></i>
-                            <span class="hidden-xs">Column</span>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                @Html.ActionLink("Rendering as value", "RenderedAs", "Column")
-                            </li>
-                            <li>
-                                @Html.ActionLink("Formatting values", "Formatted", "Column")
-                            </li>
-                            <li>
-                                @Html.ActionLink("Encoding values", "Encoded", "Column")
-                            </li>
-                            <li>
-                                @Html.ActionLink("Header title", "Titled", "Column")
-                            </li>
-                            <li>
-                                @Html.ActionLink("Filtering", "Filterable", "Column")
-                            </li>
-                            <li>
-                                @Html.ActionLink("Filter types", "FilteredAs", "Column")
-                            </li>
-                            <li>
-                                @Html.ActionLink("First sort dir", "FirstSortIn", "Column")
-                            </li>
-                            <li>
-                                @Html.ActionLink("Sorting", "Sortable", "Column")
-                            </li>
-                            <li>
-                                @Html.ActionLink("Styling", "Css", "Column")
-                            </li>
-                            <li>
-                                @Html.ActionLink("Name", "Named", "Column")
-                            </li>
-                        </ul>
+                    <li>
+                        @Html.ActionLink("Header title", "Title", "Column")
+                    </li>
+                    <li>
+                        @Html.ActionLink("Filtering", "Filtering", "Column")
+                    </li>
+                    <li>
+                        @Html.ActionLink("Filter types", "FilterTyping", "Column")
+                    </li>
+                    <li>
+                        @Html.ActionLink("First sort dir", "FirstSort", "Column")
+                    </li>
+                    <li>
+                        @Html.ActionLink("Sorting", "Sorting", "Column")
+                    </li>
+                    <li>
+                        @Html.ActionLink("Styling", "Styling", "Column")
                     </li>
                 </ul>
             </div>
-            <div id="content" class="col-xs-12 col-sm-10">
-                @RenderBody()
-            </div>
+        </div>
+        <div class="col-md-10">
+            @RenderBody()
         </div>
     </div>
 

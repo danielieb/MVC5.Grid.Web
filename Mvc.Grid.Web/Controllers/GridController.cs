@@ -8,19 +8,13 @@ namespace NonFactors.Mvc.Grid.Web.Controllers
     public class GridController : Controller
     {
         [HttpGet]
-        public ActionResult Build()
+        public ActionResult RowProcessing()
         {
             return View(PeopleRepository.GetPeople());
         }
 
         [HttpGet]
-        public ActionResult ProcessWith()
-        {
-            return View(PeopleRepository.GetPeople());
-        }
-
-        [HttpGet]
-        public ActionResult DataSource()
+        public ActionResult Ajax()
         {
             return View(PeopleRepository.GetPeople());
         }
@@ -28,47 +22,47 @@ namespace NonFactors.Mvc.Grid.Web.Controllers
         [HttpGet]
         public ActionResult GridPartial()
         {
-            return PartialView("_DataSourceGrid", PeopleRepository.GetPeople());
+            return PartialView("_AjaxGrid", PeopleRepository.GetPeople());
         }
 
         [HttpGet]
-        public ActionResult Filterable()
+        public ActionResult Filtering()
         {
             return View(PeopleRepository.GetPeople());
         }
 
         [HttpGet]
-        public ActionResult Sortable()
+        public ActionResult Sorting()
         {
             return View(PeopleRepository.GetPeople());
         }
 
         [HttpGet]
-        public ActionResult RowCss()
+        public ActionResult RowStyling()
         {
             return View(PeopleRepository.GetPeople());
         }
 
         [HttpGet]
-        public ActionResult Css()
+        public ActionResult Styling()
         {
             return View(PeopleRepository.GetPeople());
         }
 
         [HttpGet]
-        public ActionResult Empty()
+        public ActionResult EmptyText()
         {
             return View(Enumerable.Empty<PersonModel>());
         }
 
         [HttpGet]
-        public ActionResult Named()
+        public ActionResult Multiple()
         {
             return View(PeopleRepository.GetPeople());
         }
 
         [HttpGet]
-        public ActionResult Pageable()
+        public ActionResult Paging()
         {
             return View(PeopleRepository.GetPeople());
         }

@@ -6,61 +6,55 @@ namespace NonFactors.Mvc.Grid.Web.Controllers
     public class ColumnController : Controller
     {
         [HttpGet]
-        public ActionResult RenderedAs()
+        public ActionResult RenderingValue()
         {
             return View(PeopleRepository.GetPeople());
         }
 
         [HttpGet]
-        public ActionResult Filterable()
+        public ActionResult Filtering()
         {
             return View(PeopleRepository.GetPeople());
         }
 
         [HttpGet]
-        public ActionResult FilteredAs()
+        public ActionResult FilterTyping()
         {
             return View(PeopleRepository.GetPeople());
         }
 
         [HttpGet]
-        public ActionResult FirstSortIn()
+        public ActionResult FirstSort()
         {
             return View(PeopleRepository.GetPeople());
         }
 
         [HttpGet]
-        public ActionResult Sortable()
+        public ActionResult Sorting()
         {
             return View(PeopleRepository.GetPeople());
         }
 
         [HttpGet]
-        public ActionResult Encoded()
+        public ActionResult Encoding()
         {
             return View(PeopleRepository.GetPeople());
         }
 
         [HttpGet]
-        public ActionResult Formatted()
+        public ActionResult Formatting()
         {
             return View(PeopleRepository.GetPeople());
         }
 
         [HttpGet]
-        public ActionResult Css()
+        public ActionResult Styling()
         {
             return View(PeopleRepository.GetPeople());
         }
 
         [HttpGet]
-        public ActionResult Titled()
-        {
-            return View(PeopleRepository.GetPeople());
-        }
-
-        [HttpGet]
-        public ActionResult Named()
+        public ActionResult Title()
         {
             return View(PeopleRepository.GetPeople());
         }

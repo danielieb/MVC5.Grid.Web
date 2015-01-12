@@ -14,7 +14,7 @@ namespace NonFactors.Mvc.Grid.Web.Controllers
         [HttpGet]
         public ActionResult Installation()
         {
-            return View(PeopleRepository.GetPeople());
+            return View();
         }
     }
 }

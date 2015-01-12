@@ -104,17 +104,20 @@
   <ItemGroup>
     <Content Include="Content\Bootstrap\bootstrap.css" />
     <Content Include="Content\Bootstrap\Fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\FontAwesome\font-awesome.css" />
     <Content Include="Content\JQueryUI\jquery-ui.css" />
     <Content Include="Content\MvcGrid\mvc-grid.css" />
+    <Content Include="Content\FontAwesome\Fonts\fontawesome-webfont.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Shared\base.css" />
     <Content Include="Content\Bootstrap\Fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Content\Bootstrap\Fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Content\Bootstrap\Fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="Images\pattern.png" />
+    <Content Include="Images\background.jpg" />
     <Content Include="Scripts\Bootstrap\bootstrap.js" />
     <Content Include="Scripts\JQueryUI\jquery-ui.js" />
     <Content Include="Scripts\JQuery\jquery.js" />
+    <Content Include="Scripts\JQuery\jquery.nicescroll.js" />
     <Content Include="Scripts\MvcGrid\Cultures\mvc-grid.culture.fr.js" />
     <Content Include="Scripts\MvcGrid\mvc-grid.js" />
     <Content Include="Scripts\Shared\site.js" />
@@ -139,73 +142,79 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Column\RenderedAs.cshtml" />
+    <Content Include="Views\Column\RenderingValue.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Column\Filterable.cshtml" />
+    <Content Include="Views\Column\Filtering.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Column\FilteredAs.cshtml" />
+    <Content Include="Views\Column\FilterTyping.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Column\FirstSortIn.cshtml" />
+    <Content Include="Views\Column\FirstSort.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Column\Sortable.cshtml" />
+    <Content Include="Views\Column\Sorting.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Column\Encoded.cshtml" />
+    <Content Include="Views\Column\Encoding.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Column\Formatted.cshtml" />
+    <Content Include="Views\Column\Formatting.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Column\Css.cshtml" />
+    <Content Include="Views\Column\Styling.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Column\Titled.cshtml" />
+    <Content Include="Views\Column\Title.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Column\Named.cshtml" />
+    <Content Include="Views\Grid\RowProcessing.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Grid\ProcessWith.cshtml" />
+    <Content Include="Views\Grid\Ajax.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Grid\Build.cshtml" />
+    <Content Include="Views\Grid\_AjaxGrid.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Grid\DataSource.cshtml" />
+    <Content Include="Views\Grid\Filtering.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Grid\_DataSourceGrid.cshtml" />
+    <Content Include="Views\Grid\Sorting.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Grid\Filterable.cshtml" />
+    <Content Include="Views\Grid\RowStyling.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Grid\Sortable.cshtml" />
+    <Content Include="Views\Grid\Styling.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Grid\RowCss.cshtml" />
+    <Content Include="Views\Grid\EmptyText.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Grid\Css.cshtml" />
+    <Content Include="Views\Grid\Multiple.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Grid\Empty.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Grid\Named.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Grid\Pageable.cshtml" />
+    <Content Include="Views\Grid\Paging.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Home\Installation.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Grid\Localization.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\FontAwesome\Fonts\fontawesome-webfont.woff" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\FontAwesome\Fonts\fontawesome-webfont.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\FontAwesome\Fonts\fontawesome-webfont.eot" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\FontAwesome\Fonts\FontAwesome.otf" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

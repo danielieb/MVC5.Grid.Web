@@ -1,14 +1,14 @@
 ﻿@model IEnumerable<PersonModel>
 
 @{
-    ViewBag.Title = "MVC.Grid";
+    ViewBag.Title = "Column value rendering";
 }
 
 <div class="example content-block">
     <div class="widget">
         <div class="widget-header">
             <i class="fa fa-bars"></i>
-            Quick start
+            Grid
             <span class="widget-buttons">
                 <i class="content-toggle"></i>
             </span>
@@ -24,10 +24,8 @@
 
                         columns.Add(model => model.Age).Titled("Age");
                         columns.Add(model => model.Birthday).Titled("Birth date");
-                        columns.Add(model => model.IsWorking).Titled("Employed");
+                        columns.Add(model => model.IsWorking).Titled("Employed").RenderedAs(model => model.IsWorking == true ? "Employed" : "Unemployed");
                     })
-                    .Filterable()
-                    .Sortable()
             )
         </div>
     </div>
@@ -54,10 +52,8 @@
 
             columns.Add(model => model.Age).Titled(<span class="str">"Age"</span>);
             columns.Add(model => model.Birthday).Titled(<span class="str">"Birth date"</span>);
-            columns.Add(model => model.IsWorking).Titled(<span class="str">"Employed"</span>);
+            columns.Add(model => model.IsWorking).Titled(<span class="str">"Employed"</span>).RenderedAs(model => model.IsWorking == <span class="kwd">true</span> ? <span class="str">"Employed"</span> : <span class="str">"Unemployed"</span>);
         })
-        .Filterable()
-        .Sortable()
 )
 </code>
 </pre>

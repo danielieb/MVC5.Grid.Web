@@ -1,14 +1,15 @@
 ﻿@model IEnumerable<PersonModel>
 
 @{
-    ViewBag.Title = "MVC.Grid";
+    ViewBag.Title = "Column formatting";
 }
+
 
 <div class="example content-block">
     <div class="widget">
         <div class="widget-header">
             <i class="fa fa-bars"></i>
-            Quick start
+            Grid
             <span class="widget-buttons">
                 <i class="content-toggle"></i>
             </span>
@@ -23,11 +24,9 @@
                         columns.Add(model => model.Surname).Titled("Surname");
 
                         columns.Add(model => model.Age).Titled("Age");
-                        columns.Add(model => model.Birthday).Titled("Birth date");
+                        columns.Add(model => model.Birthday).Titled("Birth year").Formatted("{0: yyyy}");
                         columns.Add(model => model.IsWorking).Titled("Employed");
                     })
-                    .Filterable()
-                    .Sortable()
             )
         </div>
     </div>
@@ -53,11 +52,9 @@
             columns.Add(model => model.Surname).Titled(<span class="str">"Surname"</span>);
 
             columns.Add(model => model.Age).Titled(<span class="str">"Age"</span>);
-            columns.Add(model => model.Birthday).Titled(<span class="str">"Birth date"</span>);
+            columns.Add(model => model.Birthday).Titled(<span class="str">"Birth year"</span>).Formatted(<span class="str">"{0: yyyy}"</span>);
             columns.Add(model => model.IsWorking).Titled(<span class="str">"Employed"</span>);
         })
-        .Filterable()
-        .Sortable()
 )
 </code>
 </pre>

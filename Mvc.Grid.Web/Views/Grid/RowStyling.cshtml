@@ -1,14 +1,20 @@
 ﻿@model IEnumerable<PersonModel>
 
 @{
-    ViewBag.Title = "MVC.Grid";
+    ViewBag.Title = "Row styling";
 }
+
+<style>
+    .bolded {
+        font-weight: bold;
+    }
+</style>
 
 <div class="example content-block">
     <div class="widget">
         <div class="widget-header">
             <i class="fa fa-bars"></i>
-            Quick start
+            Bolded workers grid
             <span class="widget-buttons">
                 <i class="content-toggle"></i>
             </span>
@@ -26,8 +32,7 @@
                         columns.Add(model => model.Birthday).Titled("Birth date");
                         columns.Add(model => model.IsWorking).Titled("Employed");
                     })
-                    .Filterable()
-                    .Sortable()
+                    .RowCss(model => model.IsWorking == true ? "bolded" : "")
             )
         </div>
     </div>
@@ -56,8 +61,7 @@
             columns.Add(model => model.Birthday).Titled(<span class="str">"Birth date"</span>);
             columns.Add(model => model.IsWorking).Titled(<span class="str">"Employed"</span>);
         })
-        .Filterable()
-        .Sortable()
+        .RowCss(model => model.IsWorking == <span class="kwd">true</span> ? <span class="str">"bolded"</span> : <span class="str">""</span>)
 )
 </code>
 </pre>
