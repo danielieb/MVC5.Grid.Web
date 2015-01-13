@@ -18,7 +18,7 @@ namespace NonFactors.Mvc.Grid.Web.Controllers
         }
 
         [HttpGet]
-        public ActionResult FilterTyping()
+        public ActionResult CustomFilter()
         {
             return View(PeopleRepository.GetPeople());
         }

@@ -15,6 +15,10 @@
 <body>
     <div class="row">
         <div class="col-md-2">
+            <div class="sidebar-search content-block">
+                @Html.TextBox("SearchInput", null, new { placeholder = "Search..." })
+                <span class="search-icon fa fa-search"></span>
+            </div>
             <div class="sidebar content-block">
                 <ul>
                     <li>
@@ -23,63 +27,70 @@
                     <li>
                         @Html.ActionLink("Installation", "Installation", "Home")
                     </li>
+                </ul>
+            </div>
+            <div class="sidebar content-block">
+                <ul>
                     <li>
-                        @Html.ActionLink("Filtering", "Filtering", "Grid")
+                        @Html.ActionLink("Grid filtering", "Filtering", "Grid")
                     </li>
                     <li>
-                        @Html.ActionLink("Sorting", "Sorting", "Grid")
+                        @Html.ActionLink("Grid sorting", "Sorting", "Grid")
                     </li>
                     <li>
-                        @Html.ActionLink("Styling", "Styling", "Grid")
+                        @Html.ActionLink("Grid styling", "Styling", "Grid")
                     </li>
                     <li>
-                        @Html.ActionLink("Ajax", "Ajax", "Grid")
+                        @Html.ActionLink("Ajax grid", "Ajax", "Grid")
                     </li>
                     <li>
-                        @Html.ActionLink("Empty text", "EmptyText", "Grid")
+                        @Html.ActionLink("Empty grid text", "EmptyText", "Grid")
                     </li>
                     <li>
-                        @Html.ActionLink("Multiple", "Multiple", "Grid")
+                        @Html.ActionLink("Multiple grids", "Multiple", "Grid")
                     </li>
                     <li>
-                        @Html.ActionLink("Processing", "RowProcessing", "Grid")
+                        @Html.ActionLink("Processing grid rows", "RowProcessing", "Grid")
                     </li>
                     <li>
-                        @Html.ActionLink("Row styling", "RowStyling", "Grid")
+                        @Html.ActionLink("Grid row styling", "RowStyling", "Grid")
                     </li>
                     <li>
-                        @Html.ActionLink("Localization", "Localization", "Grid")
+                        @Html.ActionLink("Grid localization", "Localization", "Grid")
                     </li>
                     <li>
-                        @Html.ActionLink("Paging", "Paging", "Grid")
+                        @Html.ActionLink("Grid paging", "Paging", "Grid")
                     </li>
-
+                </ul>
+            </div>
+            <div class="sidebar content-block">
+                <ul>
                     <li>
-                        @Html.ActionLink("Value rendering", "RenderingValue", "Column")
-                    </li>
-                    <li>
-                        @Html.ActionLink("Formatting", "Formatting", "Column")
-                    </li>
-                    <li>
-                        @Html.ActionLink("Encoding", "Encoding", "Column")
+                        @Html.ActionLink("Column value rendering", "RenderingValue", "Column")
                     </li>
                     <li>
-                        @Html.ActionLink("Header title", "Title", "Column")
+                        @Html.ActionLink("Column formatting", "Formatting", "Column")
                     </li>
                     <li>
-                        @Html.ActionLink("Filtering", "Filtering", "Column")
+                        @Html.ActionLink("Column encoding", "Encoding", "Column")
                     </li>
                     <li>
-                        @Html.ActionLink("Filter types", "FilterTyping", "Column")
+                        @Html.ActionLink("Column header title", "Title", "Column")
                     </li>
                     <li>
-                        @Html.ActionLink("First sort dir", "FirstSort", "Column")
+                        @Html.ActionLink("Column filtering", "Filtering", "Column")
                     </li>
                     <li>
-                        @Html.ActionLink("Sorting", "Sorting", "Column")
+                        @Html.ActionLink("Column custom filter", "CustomFilter", "Column")
                     </li>
                     <li>
-                        @Html.ActionLink("Styling", "Styling", "Column")
+                        @Html.ActionLink("Column first sort dir", "FirstSort", "Column")
+                    </li>
+                    <li>
+                        @Html.ActionLink("Column sorting", "Sorting", "Column")
+                    </li>
+                    <li>
+                        @Html.ActionLink("Column styling", "Styling", "Column")
                     </li>
                 </ul>
             </div>
