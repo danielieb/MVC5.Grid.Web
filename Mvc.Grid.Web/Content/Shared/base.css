@@ -150,3 +150,27 @@ body {
     background-color: #ce948d;
     color: #ffffff;
 }
+
+.mvc-grid-pager {
+    text-align: center;
+}
+
+.pagination {
+    margin-bottom: 0;
+}
+
+.pagination > li > span,
+.pagination > .disabled > span {
+    background: rgba(255, 255, 255, 0.55);
+}
+
+.pagination > .disabled > span:hover {
+    background-color: #eee;
+    border-color: #ddd;
+    color: #23527c;
+}
+
+.pagination > .active > span {
+    background: #82a1d2;
+    border-color: rgba(131, 174, 211, 1);
+}
