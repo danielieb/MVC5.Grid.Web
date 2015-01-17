@@ -15,7 +15,7 @@
         </div>
         <div class="widget-content">
             @(
- Html
+                Html
                     .Grid(Model)
                     .Build(columns =>
                     {
@@ -35,14 +35,16 @@
     <div class="widget">
         <div class="widget-header">
             <i class="fa fa-code"></i>
-            Code
+            View
             <span class="widget-buttons">
                 <i class="content-toggle"></i>
             </span>
         </div>
         <div class="widget-content">
 <pre>
-<code>
+<code>    
+@@model <span class="cls">IEnumerable</span>&lt;<span class="cls">PersonModel</span>&gt;
+
 @@(
     Html
         .Grid(Model)

@@ -134,3 +134,19 @@ body {
     .example-code .widget-content .str {
         color: #E86E6E;
     }
+
+.btn {
+    border: 3px solid transparent;
+    border-radius: 0;
+    padding: 5px 9px;
+}
+
+.btn-success {
+    background-color: #96cba1;
+    color: #ffffff;
+}
+
+.btn-danger {
+    background-color: #ce948d;
+    color: #ffffff;
+}

@@ -8,7 +8,7 @@
     <div class="widget">
         <div class="widget-header">
             <i class="fa fa-bars"></i>
-            Grid filtering
+            Grid
             <span class="widget-buttons">
                 <i class="content-toggle"></i>
             </span>
@@ -19,7 +19,7 @@
                     .Grid(Model)
                     .Build(columns =>
                     {
-                        columns.Add(model => model.Name).Titled("Name").Filterable(true).FilteredAs("Text");
+                        columns.Add(model => model.Name).Titled("Name").Filterable(true).FilteredAs("Contains");
                         columns.Add(model => model.Surname).Titled("Surname");
 
                         columns.Add(model => model.Age).Titled("Age");
@@ -30,24 +30,28 @@
         </div>
     </div>
 </div>
-<div class="example-code content-block">
-    <div class="widget">
-        <div class="widget-header">
-            <i class="fa fa-code"></i>
-            Code
-            <span class="widget-buttons">
-                <i class="content-toggle"></i>
-            </span>
-        </div>
-        <div class="widget-content">
+<div class="row">
+    <div class="col-md-6">
+        <div class="example-code content-block">
+            <div class="widget">
+                <div class="widget-header">
+                    <i class="fa fa-code"></i>
+                    View
+                    <span class="widget-buttons">
+                        <i class="content-toggle"></i>
+                    </span>
+                </div>
+                <div class="widget-content">
 <pre>
 <code>
+@@model <span class="cls">IEnumerable</span>&lt;<span class="cls">PersonModel</span>&gt;
+
 @@(
     Html
         .Grid(Model)
         .Build(columns =>
         {
-            columns.Add(model => model.Name).Titled(<span class="str">"Name"</span>).Filterable(<span class="kwd">true</span>).FilteredAs(<span class="str">"Text"</span>);
+            columns.Add(model => model.Name).Titled(<span class="str">"Name"</span>).Filterable(<span class="kwd">true</span>).FilteredAs(<span class="str">"Contains"</span>);
             columns.Add(model => model.Surname).Titled(<span class="str">"Surname"</span>);
             
             columns.Add(model => model.Age).Titled(<span class="str">"Age"</span>);
@@ -57,6 +61,160 @@
 )
 </code>
 </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="example-code content-block">
+            <div class="widget">
+                <div class="widget-header">
+                    <i class="fa fa-code"></i>
+                    Javascript
+                    <span class="widget-buttons">
+                        <i class="content-toggle"></i>
+                    </span>
+                </div>
+                <div class="widget-content">
+<pre>
+<code>
+<span class="kwd">var</span> CustomTextFilter = (<span class="kwd">function</span> () {
+    <span class="kwd">function</span> CustomTextFilter() {
+    }
+
+    CustomTextFilter.prototype = {
+        render: <span class="kwd">function</span> (popup, filter) {
+            popup.html(
+                <span class="str">'&lt;div class="popup-arrow"&gt;&lt;/div&gt;'</span> +
+                <span class="str">'&lt;div class="popup-content"&gt;'</span> +
+                    <span class="str">'&lt;div class="form-group"&gt;'</span> +
+                    <span class="str">'&lt;input class="form-control mvc-grid-input" placeholder="Contains" type="text" value="'</span> + filter.val + <span class="str">'"&gt;'</span> +
+                    <span class="str">'&lt;/div&gt;'</span> +
+                    <span class="str">'&lt;div class="mvc-grid-filter-buttons row"&gt;'</span> +
+                    <span class="str">'&lt;div class="mvc-grid-left-button col-sm-6"&gt;'</span> +
+                        <span class="str">'&lt;button class="btn btn-success btn-block mvc-grid-filter-apply" type="button"&gt;&#10004;&lt;/button&gt;'</span> +
+                    <span class="str">'&lt;/div&gt;'</span> +
+                    <span class="str">'&lt;div class="mvc-grid-right-button col-sm-6"&gt;'</span> +
+                        <span class="str">'&lt;button class="btn btn-danger btn-block mvc-grid-filter-cancel" type="button"&gt;&#10008;&lt;/button&gt;'</span> +
+                    <span class="str">'&lt;/div&gt;'</span> +
+                    <span class="str">'&lt;/div&gt;'</span> +
+                <span class="str">'&lt;/div&gt;'</span>);
+        },
+        init: <span class="kwd">function</span> (grid, column, popup) {
+            <span class="kwd">this</span>.bindType(grid, column, popup);
+            <span class="kwd">this</span>.bindValue(grid, column, popup);
+            <span class="kwd">this</span>.bindApply(grid, column, popup);
+            <span class="kwd">this</span>.bindCancel(grid, column, popup);
+        },
+        bindType: <span class="kwd">function</span> (grid, column, popup) {
+            column.filter.type = "Contains";
+        },
+        bindValue: <span class="kwd">function</span> (grid, column, popup) {
+            <span class="kwd">var</span> value = popup.find(<span class="str">'.mvc-grid-input'</span>);
+            value.bind(<span class="str">'keyup.mvcgrid'</span>, <span class="kwd">function</span> (e) {
+                column.filter.val = <span class="kwd">this</span>.value;
+                if (e.keyCode == 13) {
+                    popup.find(<span class="str">'.mvc-grid-filter-apply'</span>).click();
+                }
+            });
+        },
+        bindApply: <span class="kwd">function</span> (grid, column, popup) {
+            <span class="kwd">var</span> apply = popup.find(<span class="str">'.mvc-grid-filter-apply'</span>);
+            apply.bind(<span class="str">'click.mvcgrid'</span>, <span class="kwd">function</span> () {
+                popup.removeClass(<span class="str">'open'</span>);
+                grid.reload(grid.formFilterQuery(column));
+            });
+        },
+        bindCancel: <span class="kwd">function</span> (grid, column, popup) {
+            <span class="kwd">var</span> cancel = popup.find(<span class="str">'.mvc-grid-filter-cancel'</span>);
+            cancel.bind(<span class="str">'click.mvcgrid'</span>, <span class="kwd">function</span> () {
+                popup.removeClass(<span class="str">'open'</span>);
+                grid.reload(grid.formFilterQueryWithout(column));
+            });
+        }
+    };
+    <span class="kwd">return</span> CustomTextFilter;
+})();
+
+$(<span class="str">'.mvc-grid'</span>).mvcgrid({
+    filters: {
+        <span class="str">'Contains'</span>: <span class="kwd">new</span> CustomTextFilter()
+    }
+});
+</code>
+</pre>
+                </div>
+            </div>
         </div>
     </div>
 </div>
+
+@section scripts {
+<script>
+    var CustomTextFilter = (function () {
+        function CustomTextFilter() {
+        }
+
+        CustomTextFilter.prototype = {
+            render: function (popup, filter) {
+                popup.html(
+                    '<div class="popup-arrow"></div>' +
+                    '<div class="popup-content">' +
+                         '<div class="form-group">' +
+                            '<input class="form-control mvc-grid-input" placeholder="Contains" type="text" value="' + filter.val + '">' +
+                         '</div>' +
+                         '<div class="mvc-grid-filter-buttons row">' +
+                            '<div class="mvc-grid-left-button col-sm-6">' +
+                                '<button class="btn btn-success btn-block mvc-grid-filter-apply" type="button">&#10004;</button>' +
+                            '</div>' +
+                            '<div class="mvc-grid-right-button col-sm-6">' +
+                                '<button class="btn btn-danger btn-block mvc-grid-filter-cancel" type="button">&#10008;</button>' +
+                            '</div>' +
+                         '</div>' +
+                     '</div>');
+            },
+
+            init: function (grid, column, popup) {
+                this.bindType(grid, column, popup);
+                this.bindValue(grid, column, popup);
+                this.bindApply(grid, column, popup);
+                this.bindCancel(grid, column, popup);
+            },
+            bindType: function (grid, column, popup) {
+                column.filter.type = "Contains";
+            },
+            bindValue: function (grid, column, popup) {
+                var value = popup.find('.mvc-grid-input');
+                value.bind('keyup.mvcgrid', function (e) {
+                    column.filter.val = this.value;
+                    if (e.keyCode == 13) {
+                        popup.find('.mvc-grid-filter-apply').click();
+                    }
+                });
+            },
+            bindApply: function (grid, column, popup) {
+                var apply = popup.find('.mvc-grid-filter-apply');
+                apply.bind('click.mvcgrid', function () {
+                    popup.removeClass('open');
+                    grid.reload(grid.formFilterQuery(column));
+                });
+            },
+            bindCancel: function (grid, column, popup) {
+                var cancel = popup.find('.mvc-grid-filter-cancel');
+                cancel.bind('click.mvcgrid', function () {
+                    popup.removeClass('open');
+                    grid.reload(grid.formFilterQueryWithout(column));
+                });
+            }
+        };
+
+        return CustomTextFilter;
+    })();
+
+    $('.mvc-grid').mvcgrid({
+        filters: {
+            'Contains': new CustomTextFilter()
+        }
+    });
+</script>
+}

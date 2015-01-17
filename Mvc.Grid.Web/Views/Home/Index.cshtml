@@ -32,18 +32,47 @@
         </div>
     </div>
 </div>
-<div class="example-code content-block">
-    <div class="widget">
-        <div class="widget-header">
-            <i class="fa fa-code"></i>
-            Code
-            <span class="widget-buttons">
-                <i class="content-toggle"></i>
-            </span>
-        </div>
-        <div class="widget-content">
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="example-code content-block">
+            <div class="widget">
+                <div class="widget-header">
+                    <i class="fa fa-code"></i>
+                    Controller
+                    <span class="widget-buttons">
+                        <i class="content-toggle"></i>
+                    </span>
+                </div>
+                <div class="widget-content">
 <pre>
 <code>
+[<span class="cls">HttpGet</span>]
+<span class="kwd">public</span> <span class="cls">ActionResult</span> Index()
+{
+    <span class="kwd">return</span> View(PeopleRepository.GetPeople());
+}
+</code>
+</pre>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="example-code content-block">
+            <div class="widget">
+                <div class="widget-header">
+                    <i class="fa fa-code"></i>
+                    View
+                    <span class="widget-buttons">
+                        <i class="content-toggle"></i>
+                    </span>
+                </div>
+                <div class="widget-content">
+<pre>
+<code>
+@@model <span class="cls">IEnumerable</span>&lt;<span class="cls">PersonModel</span>&gt;
+
 @@(
     Html
         .Grid(Model)
@@ -51,7 +80,6 @@
         {
             columns.Add(model => model.Name).Titled(<span class="str">"Name"</span>);
             columns.Add(model => model.Surname).Titled(<span class="str">"Surname"</span>);
-
             columns.Add(model => model.Age).Titled(<span class="str">"Age"</span>);
             columns.Add(model => model.Birthday).Titled(<span class="str">"Birth date"</span>);
             columns.Add(model => model.IsWorking).Titled(<span class="str">"Employed"</span>);
@@ -61,6 +89,8 @@
 )
 </code>
 </pre>
+                </div>
+            </div>
         </div>
     </div>
 </div>
