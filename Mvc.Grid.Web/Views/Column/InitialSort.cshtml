@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<PersonModel>
 
 @{
-    ViewBag.Title = "Column first sort order";
+    ViewBag.Title = "Column initial sort order";
 }
 
 <div class="example content-block">
@@ -19,7 +19,7 @@
                     .Grid(Model)
                     .Build(columns =>
                     {
-                        columns.Add(model => model.Name).Titled("Name").Sortable(true).FirstSort(GridSortOrder.Desc);
+                        columns.Add(model => model.Name).Titled("Name").Sortable(true).InitialSort(GridSortOrder.Desc);
                         columns.Add(model => model.Surname).Titled("Surname").Sortable(true);
 
                         columns.Add(model => model.Age).Titled("Age");
@@ -49,7 +49,7 @@
         .Grid(Model)
         .Build(columns =>
         {
-            columns.Add(model => model.Name).Titled(<span class="str">"Name"</span>).Sortable(<span class="kwd">true</span>).FirstSort(<span class="cls">GridSortOrder</span>.Desc);
+            columns.Add(model => model.Name).Titled(<span class="str">"Name"</span>).Sortable(<span class="kwd">true</span>).InitialSort(<span class="cls">GridSortOrder</span>.Desc);
             columns.Add(model => model.Surname).Titled(<span class="str">"Surname"</span>)).Sortable(<span class="kwd">true</span>);
 
             columns.Add(model => model.Age).Titled(<span class="str">"Age"</span>);

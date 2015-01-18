@@ -98,6 +98,12 @@
             columns.Add(model => model.IsWorking).Titled(<span class="str">"Employed"</span>);
         })
         .DataSourceAction(<span class="str">"IndexGrid"</span>)
+        .Pageable(pager =>
+        {
+            pager.PagesToDisplay = 2;
+            pager.RowsPerPage = 2;
+        })
+        .Filterable()
         .Sortable()
 )
 </code>

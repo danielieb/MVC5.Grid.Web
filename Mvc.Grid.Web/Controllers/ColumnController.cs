@@ -24,6 +24,12 @@ namespace NonFactors.Mvc.Grid.Web.Controllers
         }
 
         [HttpGet]
+        public ActionResult InitialSort()
+        {
+            return View(PeopleRepository.GetPeople());
+        }
+
+        [HttpGet]
         public ActionResult FirstSort()
         {
             return View(PeopleRepository.GetPeople());

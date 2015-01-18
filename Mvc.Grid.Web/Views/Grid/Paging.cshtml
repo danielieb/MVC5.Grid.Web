@@ -28,6 +28,8 @@
                     })
                     .Pageable(pager =>
                     {
+                        pager.PagesToDisplay = 3;
+                        pager.InitialPage = 2;
                         pager.RowsPerPage = 2;
                     })
             )
@@ -62,6 +64,8 @@
         })
         .Pageable(pager =>
         {
+            pager.PagesToDisplay = 3;
+            pager.InitialPage = 2;
             pager.RowsPerPage = 2;
         })
 )
