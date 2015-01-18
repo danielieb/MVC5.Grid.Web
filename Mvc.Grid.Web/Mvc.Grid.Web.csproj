@@ -93,6 +93,7 @@
     <Compile Include="Controllers\ColumnController.cs" />
     <Compile Include="Controllers\GridController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PagerController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -235,6 +236,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Column\InitialSort.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Pager\PagesToDisplay.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Pager\InitialPage.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Pager\RowsPerPage.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
