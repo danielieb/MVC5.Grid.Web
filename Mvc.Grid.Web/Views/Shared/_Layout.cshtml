@@ -110,6 +110,19 @@
                     </li>
                 </ul>
             </div>
+            <div class="sidebar content-block">
+                <ul>
+                    <li>
+                        @Html.ActionLink("Binding row clicked event", "RowClicked", "Javascript")
+                    </li>
+                    <li>
+                        @Html.ActionLink("Reloading ajax grid", "Reload", "Javascript")
+                    </li>
+                    <li>
+                        @Html.ActionLink("Binding reload events", "ReloadEvents", "Javascript")
+                    </li>
+                </ul>
+            </div>
         </div>
         <div class="col-md-10">
             @RenderBody()

@@ -98,6 +98,10 @@ body {
     padding: 15px;
 }
 
+.ajax-content {
+    min-height: 440px;
+}
+
 .table {
     margin: 0;
 }
@@ -109,6 +113,10 @@ body {
 
 .docs .widget-header {
     background: rgba(90, 90, 90, 0.65);
+}
+
+.output .widget-header {
+    background: rgba(145, 203, 222, 0.85);
 }
 
 .example .widget-header {
@@ -159,18 +167,18 @@ body {
     margin-bottom: 0;
 }
 
-.pagination > li > span,
-.pagination > .disabled > span {
-    background: rgba(255, 255, 255, 0.55);
-}
+    .pagination > li > span,
+    .pagination > .disabled > span {
+        background: rgba(255, 255, 255, 0.55);
+    }
 
-.pagination > .disabled > span:hover {
-    background-color: #eee;
-    border-color: #ddd;
-    color: #23527c;
-}
+        .pagination > .disabled > span:hover {
+            background-color: #eee;
+            border-color: #ddd;
+            color: #23527c;
+        }
 
-.pagination > .active > span {
-    background: #82a1d2;
-    border-color: rgba(131, 174, 211, 1);
-}
+    .pagination > .active > span {
+        background: #82a1d2;
+        border-color: rgba(131, 174, 211, 1);
+    }

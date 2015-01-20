@@ -13,10 +13,14 @@ var MvcGrid = (function () {
         this.element = grid;
         options = options || {};
         this.name = grid.data('name') || '';
-        this.dataSourceUrl = grid.data('source-url') || '';
+        this.rowClicked = options.rowClicked;
+        this.reloadEnded = options.reloadEnded;
+        this.reloadFailed = options.reloadFailed;
+        this.reloadStarted = options.reloadStarted;
+        this.sourceUrl = grid.data('source-url') || options.sourceUrl || '';
         this.gridQuery = options.query || window.location.search.replace('?', '');
 
-        if (options.reload === true || (this.dataSourceUrl != '' && !options.isLoaded)) {
+        if (options.reload === true || (this.sourceUrl != '' && !options.isLoaded)) {
             this.reload(this.gridQuery);
             return;
         }
@@ -41,7 +45,6 @@ var MvcGrid = (function () {
             this.applyPaging($(pages[ind]));
         }
 
-        this.rowClicked = options.rowClicked;
         this.bindGridEvents();
         this.cleanGrid(grid);
     }
@@ -65,12 +68,12 @@ var MvcGrid = (function () {
             };
         },
         set: function (options) {
-            if (options.filters) {
-                this.filters = options.filters;
-            }
-            if (options.rowClicked) {
-                this.rowClicked = options.rowClicked;
-            }
+            this.filters = options.filters || this.filters;
+            this.rowClicked = options.rowClicked || this.rowClicked;
+            this.reloadEnded = options.reloadEnded || this.reloadEnded;
+            this.reloadFailed = options.reloadFailed || this.reloadFailed;
+            this.reloadStarted = options.reloadStarted || this.reloadStarted;
+
             if (options.reload === true) {
                 this.reload(this.gridQuery);
             }
@@ -111,20 +114,37 @@ var MvcGrid = (function () {
         reload: function (query) {
             var grid = this;
 
-            if (grid.dataSourceUrl != '') {
+            if (grid.sourceUrl != '') {
+                if (grid.reloadStarted) {
+                    grid.reloadStarted(grid);
+                }
+
                 $.ajax({
-                    url: grid.dataSourceUrl + '?' + query
+                    url: grid.sourceUrl + '?' + query
                 }).success(function (result) {
+                    if (grid.reloadEnded) {
+                        grid.reloadEnded(grid);
+                    }
+
                     grid.element.hide();
                     grid.element.after(result);
 
                     grid.element.next('.mvc-grid').mvcgrid({
+                        reloadStarted: grid.reloadStarted,
+                        reloadFailed: grid.reloadFailed,
+                        reloadEnded: grid.reloadEnded,
                         rowClicked: grid.rowClicked,
+                        sourceUrl: grid.sourceUrl,
                         filters: grid.filters,
                         isLoaded: true,
                         query: query
                     });
                     grid.element.remove();
+                })
+                .error(function (result) {
+                    if (grid.reloadFailed) {
+                        grid.reloadFailed(grid, result);
+                    }
                 });
             } else {
                 window.location.href = '?' + query;
@@ -256,16 +276,16 @@ var MvcGrid = (function () {
             this.element.find('.mvc-grid-row').bind('click.mvcgrid', function () {
                 if (grid.rowClicked) {
                     var cells = $(this).find('td');
-                    var row = [];
+                    var data = [];
 
                     for (var ind = 0; ind < grid.columns.length; ind++) {
                         var column = grid.columns[ind];
                         if (cells.length > ind) {
-                            row[column.name] = $(cells[ind]).text();
+                            data[column.name] = $(cells[ind]).text();
                         }
                     }
 
-                    grid.rowClicked(grid, row);
+                    grid.rowClicked(grid, this, data);
                 }
             });
         },

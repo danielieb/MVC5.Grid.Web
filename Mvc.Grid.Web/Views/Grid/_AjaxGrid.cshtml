@@ -12,7 +12,6 @@
             columns.Add(model => model.Birthday).Titled("Birth date");
             columns.Add(model => model.IsWorking).Titled("Employed");
         })
-        .DataSourceAction("GridPartial")
         .Pageable(pager =>
         {
             pager.PagesToDisplay = 2;

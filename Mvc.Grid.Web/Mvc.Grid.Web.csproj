@@ -91,6 +91,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Context\PeopleRepository.cs" />
     <Compile Include="Controllers\ColumnController.cs" />
+    <Compile Include="Controllers\JavascriptController.cs" />
     <Compile Include="Controllers\GridController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PagerController.cs" />
@@ -132,6 +133,7 @@
     <Content Include="Scripts\Bootstrap\bootstrap.js" />
     <Content Include="Scripts\JQueryUI\jquery-ui.js" />
     <Content Include="Scripts\JQuery\jquery.js" />
+    <Content Include="Scripts\JQuery\jquery.UI.block.js" />
     <Content Include="Scripts\JQuery\jquery.nicescroll.js" />
     <Content Include="Scripts\MvcGrid\Cultures\mvc-grid.culture.fr.js" />
     <Content Include="Scripts\MvcGrid\mvc-grid.js" />
@@ -245,6 +247,18 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Pager\RowsPerPage.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Javascript\RowClicked.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Javascript\Reload.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Javascript\_ReloadGrid.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Javascript\ReloadEvents.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
