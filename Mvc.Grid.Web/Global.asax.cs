@@ -1,4 +1,6 @@
-﻿using System.Web;
+﻿using Mvc.Grid.Web.Filters;
+using System;
+using System.Web;
 using System.Web.Optimization;
 using System.Web.Routing;
 
@@ -10,6 +12,8 @@ namespace NonFactors.Mvc.Grid.Web
         {
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+
+            MvcGrid.Filters.Register(typeof(Boolean), "Is", typeof(BooleanIsNullFilter<>));
         }
     }
 }
