@@ -113,7 +113,7 @@
             <span class="kwd">var</span> value = popup.find(<span class="str">'.mvc-grid-input'</span>);
             value.bind(<span class="str">'keyup.mvcgrid'</span>, <span class="kwd">function</span> (e) {
                 column.filter.val = <span class="kwd">this</span>.value;
-                if (e.keyCode == 13) {
+                <span class="kwd">if</span> (e.keyCode == 13) {
                     popup.find(<span class="str">'.mvc-grid-apply'</span>).click();
                 }
             });
