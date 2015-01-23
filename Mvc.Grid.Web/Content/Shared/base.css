@@ -112,7 +112,7 @@ body {
     }
 
 .docs .widget-header {
-    background: rgba(90, 90, 90, 0.65);
+    background: rgba(54, 52, 52, 0.67);
 }
 
 .output .widget-header {
@@ -120,27 +120,30 @@ body {
 }
 
 .example .widget-header {
-    background: rgba(131, 174, 211, 0.85);
+    background: rgba(64, 145, 215, 0.69);
 }
 
 .example-code {
     margin-top: 20px;
 }
+    .example-code pre {
+        background: #FFFFFF;
+    }
 
     .example-code .widget-header {
-        background: rgba(145, 199, 150, 0.85);
+        background: rgba(94, 186, 103, 0.75);
     }
 
     .example-code .widget-content .cls {
-        color: #4EB1BA;
+        color: #24ACB9;
     }
 
     .example-code .widget-content .kwd {
-        color: #1E90FF;
+        color: #007FFB;
     }
 
     .example-code .widget-content .str {
-        color: #E86E6E;
+        color: #CC6500;
     }
 
 .btn {
@@ -150,7 +153,7 @@ body {
 }
 
 .btn-success {
-    background-color: #96cba1;
+    background-color: rgba(94, 186, 103, 0.75);
     color: #ffffff;
 }
 
