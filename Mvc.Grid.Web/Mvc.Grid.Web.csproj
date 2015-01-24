@@ -50,8 +50,9 @@
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.5.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="NonFactors.Mvc.Grid">
-      <HintPath>Lib\NonFactors.Mvc.Grid.dll</HintPath>
+    <Reference Include="NonFactors.Mvc.Grid, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\NonFactors.Grid.Core.Mvc5.1.0.0\lib\net45\NonFactors.Mvc.Grid.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Web" />
@@ -110,8 +111,8 @@
     <Content Include="Content\Bootstrap\Fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Content\FontAwesome\font-awesome.css" />
     <Content Include="Content\JQueryUI\jquery-ui.css" />
-    <Content Include="Content\MvcGrid\mvc-grid.css" />
     <Content Include="Content\FontAwesome\Fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\MvcGrid\mvc-grid.css" />
     <Content Include="Global.asax" />
     <Content Include="Content\Shared\base.css" />
     <Content Include="Content\Bootstrap\Fonts\glyphicons-halflings-regular.woff" />
@@ -139,6 +140,7 @@
     <Content Include="Scripts\JQuery\jquery.nicescroll.js" />
     <Content Include="Scripts\MvcGrid\Cultures\mvc-grid.culture.fr.js" />
     <Content Include="Scripts\MvcGrid\mvc-grid.js" />
+    <Content Include="Scripts\MvcGrid\mvc-grid.min.js" />
     <Content Include="Scripts\Shared\site.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
@@ -152,10 +154,6 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Shared\MvcGrid\_Grid.cshtml" />
-    <Content Include="Views\Shared\MvcGrid\_Pager.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -236,9 +234,6 @@
     <Content Include="Content\FontAwesome\Fonts\FontAwesome.otf" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Shared\MvcGrid\_AjaxGrid.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Views\Column\InitialSort.cshtml" />
   </ItemGroup>
   <ItemGroup>
@@ -267,6 +262,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Filter\Unregister.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\MvcGrid\_Pager.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\MvcGrid\_Grid.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\MvcGrid\_AjaxGrid.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

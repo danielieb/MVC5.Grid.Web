@@ -1,12 +1,12 @@
 ﻿/*!
-* Mvc.Grid 0.9.0
-* https://github.com/NonFactors/MVC.Grid
-*
-* Copyright © NonFactors
-*
-* Licensed under the terms of the MIT License
-* http://www.opensource.org/licenses/mit-license.php
-*/
+ * Mvc.Grid 1.0.0
+ * https://github.com/NonFactors/MVC.Grid
+ *
+ * Copyright © NonFactors
+ *
+ * Licensed under the terms of the MIT License
+ * http://www.opensource.org/licenses/mit-license.php
+ */
 var MvcGrid = (function () {
     function MvcGrid(grid, options) {
         this.columns = [];
