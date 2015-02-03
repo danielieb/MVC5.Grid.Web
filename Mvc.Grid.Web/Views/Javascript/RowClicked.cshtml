@@ -16,14 +16,13 @@
                     </span>
                 </div>
                 <div class="widget-content">
-                    @(
-                        Html
-                            .Grid(Model)
-                            .Build(columns =>
-                            {
-                                columns.Add(model => model.Name).Titled("Name");
-                                columns.Add(model => model.Birthday).Titled("Birth date");
-                            })
+                    @(Html
+                        .Grid(Model)
+                        .Build(columns =>
+                        {
+                            columns.Add(model => model.Name).Titled("Name");
+                            columns.Add(model => model.Birthday).Titled("Birth date");
+                        })
                     )
                 </div>
             </div>
@@ -67,14 +66,13 @@
 <code>
 @@model <span class="cls">IEnumerable</span>&lt;<span class="cls">PersonModel</span>&gt;
 
-@@(
-    Html
-        .Grid(Model)
-        .Build(columns =>
-        {
-            columns.Add(model => model.Name).Titled(<span class="str">"Name"</span>);
-            columns.Add(model => model.Birthday).Titled(<span class="str">"Birth date"</span>);
-        })
+@@(Html
+    .Grid(Model)
+    .Build(columns =>
+    {
+        columns.Add(model => model.Name).Titled(<span class="str">"Name"</span>);
+        columns.Add(model => model.Birthday).Titled(<span class="str">"Birth date"</span>);
+    })
 )
 </code>
 </pre>

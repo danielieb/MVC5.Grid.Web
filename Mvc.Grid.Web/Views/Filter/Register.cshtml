@@ -14,16 +14,15 @@
             </span>
         </div>
         <div class="widget-content">
-            @(
-                Html
-                    .Grid(Model)
-                    .Build(columns =>
-                    {
-                        columns.Add(model => model.Name).Titled("Name");
-                        columns.Add(model => model.Surname).Titled("Surname");
-                        columns.Add(model => model.IsWorking).Titled("Employed");
-                    })
-                    .Filterable()
+            @(Html
+                .Grid(Model)
+                .Build(columns =>
+                {
+                    columns.Add(model => model.Name).Titled("Name");
+                    columns.Add(model => model.Surname).Titled("Surname");
+                    columns.Add(model => model.IsWorking).Titled("Employed");
+                })
+                .Filterable()
             )
         </div>
     </div>

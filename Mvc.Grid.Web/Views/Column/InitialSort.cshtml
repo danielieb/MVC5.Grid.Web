@@ -14,18 +14,17 @@
             </span>
         </div>
         <div class="widget-content">
-            @(
-                Html
-                    .Grid(Model)
-                    .Build(columns =>
-                    {
-                        columns.Add(model => model.Name).Titled("Name").Sortable(true).InitialSort(GridSortOrder.Desc);
-                        columns.Add(model => model.Surname).Titled("Surname").Sortable(true);
+            @(Html
+                .Grid(Model)
+                .Build(columns =>
+                {
+                    columns.Add(model => model.Name).Titled("Name").Sortable(true).InitialSort(GridSortOrder.Desc);
+                    columns.Add(model => model.Surname).Titled("Surname").Sortable(true);
 
-                        columns.Add(model => model.Age).Titled("Age");
-                        columns.Add(model => model.Birthday).Titled("Birth date");
-                        columns.Add(model => model.IsWorking).Titled("Employed");
-                    })
+                    columns.Add(model => model.Age).Titled("Age");
+                    columns.Add(model => model.Birthday).Titled("Birth date");
+                    columns.Add(model => model.IsWorking).Titled("Employed");
+                })
             )
         </div>
     </div>
@@ -44,18 +43,17 @@
 <code>
 @@model <span class="cls">IEnumerable</span>&lt;<span class="cls">PersonModel</span>&gt;
 
-@@(
-    Html
-        .Grid(Model)
-        .Build(columns =>
-        {
-            columns.Add(model => model.Name).Titled(<span class="str">"Name"</span>).Sortable(<span class="kwd">true</span>).InitialSort(<span class="cls">GridSortOrder</span>.Desc);
-            columns.Add(model => model.Surname).Titled(<span class="str">"Surname"</span>)).Sortable(<span class="kwd">true</span>);
+@@(Html
+    .Grid(Model)
+    .Build(columns =>
+    {
+        columns.Add(model => model.Name).Titled(<span class="str">"Name"</span>).Sortable(<span class="kwd">true</span>).InitialSort(<span class="cls">GridSortOrder</span>.Desc);
+        columns.Add(model => model.Surname).Titled(<span class="str">"Surname"</span>)).Sortable(<span class="kwd">true</span>);
 
-            columns.Add(model => model.Age).Titled(<span class="str">"Age"</span>);
-            columns.Add(model => model.Birthday).Titled(<span class="str">"Birth date"</span>);
-            columns.Add(model => model.IsWorking).Titled(<span class="str">"Employed"</span>);
-        })
+        columns.Add(model => model.Age).Titled(<span class="str">"Age"</span>);
+        columns.Add(model => model.Birthday).Titled(<span class="str">"Birth date"</span>);
+        columns.Add(model => model.IsWorking).Titled(<span class="str">"Employed"</span>);
+    })
 )
 </code>
 </pre>

@@ -56,16 +56,15 @@
 <code>
 @@model <span class="cls">IEnumerable</span>&lt;<span class="cls">PersonModel</span>&gt;
 
-@@(
-    Html
-        .Grid(Model)
-        .Build(columns =>
-        {
-            columns.Add(model => model.Name).Titled(<span class="str">"Name"</span>);
-            columns.Add(model => model.Surname).Titled(<span class="str">"Surname"</span>);
+@@(Html
+    .Grid(Model)
+    .Build(columns =>
+    {
+        columns.Add(model => model.Name).Titled(<span class="str">"Name"</span>);
+        columns.Add(model => model.Surname).Titled(<span class="str">"Surname"</span>);
 
-            columns.Add(model => <span class="cls">DateTime</span>.Now).Titled(<span class="str">"Time stamp"</span>);
-        })
+        columns.Add(model => <span class="cls">DateTime</span>.Now).Titled(<span class="str">"Time stamp"</span>);
+    })
 )
 </code>
 </pre>

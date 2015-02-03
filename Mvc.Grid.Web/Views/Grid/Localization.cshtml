@@ -14,20 +14,19 @@
             </span>
         </div>
         <div class="widget-content">
-            @(
-                Html
-                    .Grid(Model)
-                    .Build(columns =>
-                    {
-                        columns.Add(model => model.Name).Titled("Nom");
-                        columns.Add(model => model.Surname).Titled("Nom de famille");
+            @(Html
+                .Grid(Model)
+                .Build(columns =>
+                {
+                    columns.Add(model => model.Name).Titled("Nom");
+                    columns.Add(model => model.Surname).Titled("Nom de famille");
 
-                        columns.Add(model => model.Age).Titled("Âge");
-                        columns.Add(model => model.Birthday).Titled("Date de naissance");
-                        columns.Add(model => model.IsWorking).Titled("Employé");
-                    })
-                    .Filterable()
-                    .Sortable()
+                    columns.Add(model => model.Age).Titled("Âge");
+                    columns.Add(model => model.Birthday).Titled("Date de naissance");
+                    columns.Add(model => model.IsWorking).Titled("Employé");
+                })
+                .Filterable()
+                .Sortable()
             )
         </div>
     </div>
@@ -48,20 +47,19 @@
 <code>
 @@model <span class="cls">IEnumerable</span>&lt;<span class="cls">PersonModel</span>&gt;
 
-@@(
-    Html
-        .Grid(Model)
-        .Build(columns =>
-        {
-            columns.Add(model => model.Name).Titled(<span class="str">"Nom"</span>);
-            columns.Add(model => model.Surname).Titled(<span class="str">"Nom de famille"</span>);
+@@(Html
+    .Grid(Model)
+    .Build(columns =>
+    {
+        columns.Add(model => model.Name).Titled(<span class="str">"Nom"</span>);
+        columns.Add(model => model.Surname).Titled(<span class="str">"Nom de famille"</span>);
 
-            columns.Add(model => model.Age).Titled(<span class="str">"Âge"</span>);
-            columns.Add(model => model.Birthday).Titled(<span class="str">"Date de naissance"</span>);
-            columns.Add(model => model.IsWorking).Titled(<span class="str">"Employé"</span>);
-        })
-        .Filterable()
-        .Sortable()
+        columns.Add(model => model.Age).Titled(<span class="str">"Âge"</span>);
+        columns.Add(model => model.Birthday).Titled(<span class="str">"Date de naissance"</span>);
+        columns.Add(model => model.IsWorking).Titled(<span class="str">"Employé"</span>);
+    })
+    .Filterable()
+    .Sortable()
 )
 </code>
 </pre>
