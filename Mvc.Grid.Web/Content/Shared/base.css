@@ -16,6 +16,15 @@ body {
     color: #666666;
 }
 
+.logo {
+    text-align: center;
+}
+
+    .logo img {
+        height: 50px;
+        width: 50px;
+    }
+
 .sidebar-search {
     position: relative;
 }
@@ -126,6 +135,7 @@ body {
 .example-code {
     margin-top: 20px;
 }
+
     .example-code pre {
         background: #FFFFFF;
     }
