@@ -140,23 +140,27 @@ body {
     margin-top: 20px;
 }
 
-    .example-code pre {
-        background: #FFFFFF;
-    }
-
     .example-code .widget-header {
         background: rgba(94, 186, 103, 0.75);
     }
 
-    .example-code .widget-content .cls {
+pre {
+    background: #FFFFFF;
+}
+
+    pre code .com {
+        color: #32AD32;
+    }
+
+    pre code .cls {
         color: #24ACB9;
     }
 
-    .example-code .widget-content .kwd {
+    pre code .kwd {
         color: #007FFB;
     }
 
-    .example-code .widget-content .str {
+    pre code .str {
         color: #CC6500;
     }
 

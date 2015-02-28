@@ -13,7 +13,7 @@ namespace NonFactors.Mvc.Grid.Web
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
-            MvcGrid.Filters.Register(typeof(Boolean), "Is", typeof(BooleanIsNullFilter<>));
+            MvcGrid.Filters.Register(typeof(Boolean), "Is", typeof(BooleanIsNullFilter));
         }
     }
 }

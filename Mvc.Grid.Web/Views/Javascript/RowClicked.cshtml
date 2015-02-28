@@ -20,7 +20,7 @@
                         .Grid(Model)
                         .Build(columns =>
                         {
-                            columns.Add(model => model.Name).Titled("Name");
+                            columns.Add(model => model.Name).Titled("Name").Filterable(true);
                             columns.Add(model => model.Birthday).Titled("Birth date");
                         })
                     )
@@ -70,7 +70,7 @@
     .Grid(Model)
     .Build(columns =>
     {
-        columns.Add(model => model.Name).Titled(<span class="str">"Name"</span>);
+        columns.Add(model => model.Name).Titled(<span class="str">"Name"</span>).Filterable(<span class="kwd">true</span>);
         columns.Add(model => model.Birthday).Titled(<span class="str">"Birth date"</span>);
     })
 )
@@ -137,10 +137,18 @@ $(<span class="str">'.mvc-grid'</span>).mvcgrid({
                         '        {\n' +
                         '            "name": "' + grid.columns[i].name + '",\n' +
                         '            "filter": {\n' +
-                        '                "isEnabled": "' + grid.columns[i].filter.isEnabled + '",\n' +
+                        '                "isEnabled": ' + grid.columns[i].filter.isEnabled + ',\n' +
+                        '                "isMulti": ' + grid.columns[i].filter.isMulti + ',\n' +
                         '                "name": "' + grid.columns[i].filter.name + '",\n' +
-                        '                "type": "' + grid.columns[i].filter.type + '",\n' +
-                        '                "val": "' + grid.columns[i].filter.val + '"\n' +
+                        '                "operator": "' + grid.columns[i].filter.operator + '",\n' +
+                        '                "first": {\n' +
+                        '                    "type": "' + grid.columns[i].filter.first.type + '",\n' +
+                        '                    "val": "' + grid.columns[i].filter.first.val + '"\n' +
+                        '                },\n' +
+                        '                "second": {\n' +
+                        '                    "type": "' + grid.columns[i].filter.second.type + '",\n' +
+                        '                    "val": "' + grid.columns[i].filter.second.val + '"\n' +
+                        '                }\n' +
                         '            }\n' +
                         '        }');
                 }

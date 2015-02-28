@@ -33,10 +33,16 @@
                     <li>
                         @Html.ActionLink("Installation", "Installation", "Home")
                     </li>
+                    <li>
+                        @Html.ActionLink("Migrating versions", "Migrations", "Home")
+                    </li>
                 </ul>
             </div>
             <div class="sidebar content-block">
                 <ul>
+                    <li>
+                        @Html.ActionLink("Grid multi filtering", "MultiFiltering", "Grid")
+                    </li>
                     <li>
                         @Html.ActionLink("Grid filtering", "Filtering", "Grid")
                     </li>
@@ -88,6 +94,9 @@
                     </li>
                     <li>
                         @Html.ActionLink("Column custom filter", "CustomFilter", "Column")
+                    </li>
+                    <li>
+                        @Html.ActionLink("Column multi filtering", "MultiFiltering", "Column")
                     </li>
                     <li>
                         @Html.ActionLink("Column initial sort order", "InitialSort", "Column")

@@ -29,7 +29,7 @@
 </div>
 
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-6">
         <div class="example-code content-block">
             <div class="widget">
                 <div class="widget-header">
@@ -44,8 +44,7 @@
 <code>
 <span class="kwd">public void</span> Application_Start()
 {
-    <span class="cls">MvcGrid</span>.Filters.Register(<span class="kwd">typeof</span>(<span class="cls">Boolean</span>),
-        <span class="str">"Is"</span>, <span class="kwd">typeof</span>(<span class="cls">BooleanIsNullFilter</span><>))
+    <span class="cls">MvcGrid</span>.Filters.Register(<span class="kwd">typeof</span>(<span class="cls">Boolean</span>), <span class="str">"Is"</span>, <span class="kwd">typeof</span>(<span class="cls">BooleanIsNullFilter</span>))
 }
 </code>
 </pre>
@@ -53,7 +52,7 @@
             </div>
         </div>
     </div>
-    <div class="col-md-8">
+    <div class="col-md-6">
         <div class="example-code content-block">
             <div class="widget">
                 <div class="widget-header">
@@ -66,13 +65,11 @@
                 <div class="widget-content">
 <pre>
 <code>
-<span class="kwd">public class</span> <span class="cls">BooleanIsNullFilter</span>&lt;T&gt; : <span class="cls">BaseGridFilter</span>&lt;T&gt;
+<span class="kwd">public class</span> <span class="cls">BooleanIsNullFilter</span> : <span class="cls">BaseGridFilter</span>
 {
-    <span class="kwd">public override</span> <span class="cls">IQueryable</span>&lt;T&gt; Process(<span class="cls">IQueryable</span>&lt;T&gt; items)
+    <span class="kwd">public override</span> <span class="cls">Expression</span> Apply(<span class="cls">Expression</span> expression)
     {
-        <span class="cls">Expression</span> equalsNull = <span class="cls">Expression</span>.Equal(FilteredExpression.Body, <span class="cls">Expression</span>.Constant(<span class="kwd">null</span>));
-
-        <span class="kwd">return</span> items.Where(<span class="cls">Expression</span>.Lambda&lt;Func&lt;T, <span class="cls">Boolean</span>&gt;&gt;(equalsNull, FilteredExpression.Parameters[0]));
+        <span class="kwd">return</span> <span class="cls">Expression</span>.Equal(expression, <span class="cls">Expression</span>.Constant(<span class="kwd">null</span>));
     }
 }
 </code>
@@ -108,11 +105,11 @@
             popup.html(
                 <span class="str">'&lt;div class="popup-arrow"&gt;&lt;/div&gt;'</span> +
                 <span class="str">'&lt;div class="popup-content"&gt;'</span> +
-                    <span class="str">'&lt;div class="popup-group"&gt;'</span> +
+                    <span class="str">'&lt;div class="first-filter popup-group"&gt;'</span> +
                         <span class="str">'&lt;ul class="mvc-grid-boolean-filter"&gt;'</span> +
-                            <span class="str">'&lt;li '</span> + (filter.val == <span class="str">'NotSpecified'</span> ? <span class="str">'class="active" '</span> : <span class="str">''</span>) + <span class="str">'data-value="NotSpecified"&gt;'</span> + lang.NotSpecified + <span class="str">'&lt;/li&gt;'</span> +
-                            <span class="str">'&lt;li '</span> + (filter.val == <span class="str">'True'</span> ? <span class="str">'class="active" '</span> : <span class="str">''</span>) + <span class="str">'data-value="True"&gt;'</span> + lang.Yes + <span class="str">'&lt;/li&gt;'</span> +
-                            <span class="str">'&lt;li '</span> + (filter.val == <span class="str">'False'</span> ? <span class="str">'class="active" '</span> : <span class="str">''</span>) + <span class="str">'data-value="False"&gt;'</span> + lang.No + <span class="str">'&lt;/li&gt;'</span> +
+                            <span class="str">'&lt;li '</span> + (filter.first.val == <span class="str">'NotSpecified'</span> ? <span class="str">'class="active" '</span> : <span class="str">''</span>) + <span class="str">'data-value="NotSpecified"&gt;'</span> + lang.NotSpecified + <span class="str">'&lt;/li&gt;'</span> +
+                            <span class="str">'&lt;li '</span> + (filter.first.val == <span class="str">'True'</span> ? <span class="str">'class="active" '</span> : <span class="str">''</span>) + <span class="str">'data-value="True"&gt;'</span> + lang.Yes + <span class="str">'&lt;/li&gt;'</span> +
+                            <span class="str">'&lt;li '</span> + (filter.first.val == <span class="str">'False'</span> ? <span class="str">'class="active" '</span> : <span class="str">''</span>) + <span class="str">'data-value="False"&gt;'</span> + lang.No + <span class="str">'&lt;/li&gt;'</span> +
                         <span class="str">'&lt;/ul&gt;'</span> +
                     <span class="str">'&lt;/div&gt;'</span> +
                     <span class="str">'&lt;div class="popup-button-group"&gt;'</span> +
@@ -128,15 +125,15 @@
             this.bindCancel(grid, column, popup);
         },
         bindValue: <span class="kwd">function</span> (grid, column, popup) {
-            <span class="kwd">var</span> values = popup.find(<span class="str">'.mvc-grid-boolean-filter li'</span>);
+            <span class="kwd">var</span> values = popup.find(<span class="str">'.first-filter .mvc-grid-boolean-filter li'</span>);
             values.bind(<span class="str">'click.mvcgrid'</span>, <span class="kwd">function</span> () {
                 <span class="kwd">var</span> item = $(this);
-                column.filter.val = item.data(<span class="str">'value'</span>);
+                column.filter.first.val = item.data(<span class="str">'value'</span>);
 
-                <span class="kwd">if</span> (column.filter.val == <span class="str">'NotSpecified'</span>) {
-                    column.filter.type = <span class="str">'Is'</span>;
+                <span class="kwd">if</span> (column.filter.first.val == <span class="str">'NotSpecified'</span>) {
+                    column.filter.first.type = <span class="str">'Is'</span>;
                 } <span class="kwd">else</span> {
-                    column.filter.type = <span class="str">'Equals'</span>;
+                    column.filter.first.type = <span class="str">'Equals'</span>;
                 }
 
                 item.siblings().removeClass(<span class="str">'active'</span>);
@@ -189,11 +186,11 @@ $(<span class="str">'.mvc-grid'</span>).mvcgrid({
                 popup.html(
                     '<div class="popup-arrow"></div>' +
                     '<div class="popup-content">' +
-                        '<div class="popup-group">' +
+                        '<div class="first-filter popup-group">' +
                             '<ul class="mvc-grid-boolean-filter">' +
-                                '<li ' + (filter.val == 'NotSpecified' ? 'class="active" ' : '') + 'data-value="NotSpecified">' + lang.NotSpecified + '</li>' +
-                                '<li ' + (filter.val == 'True' ? 'class="active" ' : '') + 'data-value="True">' + lang.Yes + '</li>' +
-                                '<li ' + (filter.val == 'False' ? 'class="active" ' : '') + 'data-value="False">' + lang.No + '</li>' +
+                                '<li ' + (filter.first.val == 'NotSpecified' ? 'class="active" ' : '') + 'data-value="NotSpecified">' + lang.NotSpecified + '</li>' +
+                                '<li ' + (filter.first.val == 'True' ? 'class="active" ' : '') + 'data-value="True">' + lang.Yes + '</li>' +
+                                '<li ' + (filter.first.val == 'False' ? 'class="active" ' : '') + 'data-value="False">' + lang.No + '</li>' +
                             '</ul>' +
                         '</div>' +
                         '<div class="popup-button-group">' +
@@ -209,15 +206,15 @@ $(<span class="str">'.mvc-grid'</span>).mvcgrid({
                 this.bindCancel(grid, column, popup);
             },
             bindValue: function (grid, column, popup) {
-                var values = popup.find('.mvc-grid-boolean-filter li');
+                var values = popup.find('.first-filter .mvc-grid-boolean-filter li');
                 values.bind('click.mvcgrid', function () {
                     var item = $(this);
-                    column.filter.val = item.data('value');
+                    column.filter.first.val = item.data('value');
 
-                    if (column.filter.val == 'NotSpecified') {
-                        column.filter.type = 'Is';
+                    if (column.filter.first.val == 'NotSpecified') {
+                        column.filter.first.type = 'Is';
                     } else {
-                        column.filter.type = 'Equals';
+                        column.filter.first.type = 'Equals';
                     }
 
                     item.siblings().removeClass('active');

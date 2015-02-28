@@ -1,17 +1,13 @@
 ﻿using NonFactors.Mvc.Grid;
-using System;
-using System.Linq;
 using System.Linq.Expressions;
 
 namespace Mvc.Grid.Web.Filters
 {
-    public class BooleanIsNullFilter<T> : BaseGridFilter<T>
+    public class BooleanIsNullFilter : BaseGridFilter
     {
-        public override IQueryable<T> Process(IQueryable<T> items)
+        public override Expression Apply(Expression expression)
         {
-            Expression equalsNull = Expression.Equal(FilteredExpression.Body, Expression.Constant(null));
-
-            return items.Where(Expression.Lambda<Func<T, Boolean>>(equalsNull, FilteredExpression.Parameters[0]));
+            return Expression.Equal(expression, Expression.Constant(null));
         }
     }
 }

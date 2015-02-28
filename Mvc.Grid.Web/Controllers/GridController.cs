@@ -26,6 +26,12 @@ namespace NonFactors.Mvc.Grid.Web.Controllers
         }
 
         [HttpGet]
+        public ActionResult MultiFiltering()
+        {
+            return View(PeopleRepository.GetPeople());
+        }
+
+        [HttpGet]
         public ActionResult Filtering()
         {
             return View(PeopleRepository.GetPeople());
