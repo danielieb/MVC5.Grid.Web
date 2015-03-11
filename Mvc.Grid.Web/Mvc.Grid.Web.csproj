@@ -132,7 +132,6 @@
     <Content Include="Images\JQueryUI\ui-icons_454545_256x240.png" />
     <Content Include="Images\JQueryUI\ui-icons_888888_256x240.png" />
     <Content Include="Images\JQueryUI\ui-icons_cd0a0a_256x240.png" />
-    <Content Include="Images\JQueryUI\ui-icons_ffffff_256x240.png" />
     <Content Include="Scripts\Bootstrap\bootstrap.js" />
     <Content Include="Scripts\Bootstrap\bootstrap.min.js" />
     <Content Include="Scripts\JQueryUI\jquery-ui.min.js" />
