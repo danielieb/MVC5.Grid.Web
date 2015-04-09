@@ -203,3 +203,11 @@ pre {
         background: #82a1d2;
         border-color: rgba(131, 174, 211, 1);
     }
+
+.mvc-grid-header-title {
+    vertical-align: sub;
+}
+
+.mvc-grid-sort {
+    vertical-align: middle;
+}
