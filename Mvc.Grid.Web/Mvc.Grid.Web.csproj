@@ -51,9 +51,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="NonFactors.Mvc.Grid, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\NonFactors.Grid.Core.Mvc5.2.0.0\lib\net45\NonFactors.Mvc.Grid.dll</HintPath>
+    <Reference Include="NonFactors.Mvc.Grid, Version=2.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\NonFactors.Grid.Core.Mvc5.2.1.0\lib\net45\NonFactors.Mvc.Grid.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Web" />
@@ -113,8 +113,8 @@
     <Content Include="Content\FontAwesome\font-awesome.css" />
     <Content Include="Content\JQueryUI\jquery-ui.css" />
     <Content Include="Content\FontAwesome\Fonts\fontawesome-webfont.svg" />
-    <Content Include="Content\MvcGrid\mvc-grid.css" />
     <Content Include="Content\Bootstrap\Fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\MvcGrid\mvc-grid.css" />
     <Content Include="Global.asax" />
     <Content Include="Content\Shared\base.css" />
     <Content Include="Images\background.jpg" />
@@ -269,15 +269,6 @@
     <Content Include="Views\Home\Migrations.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Shared\MvcGrid\_Pager.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Shared\MvcGrid\_Grid.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Shared\MvcGrid\_AjaxGrid.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Content\Bootstrap\Fonts\glyphicons-halflings-regular.woff2" />
   </ItemGroup>
   <ItemGroup>
@@ -294,6 +285,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Column\MultiFiltering.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\MvcGrid\_Pager.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\MvcGrid\_Grid.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\MvcGrid\_AjaxGrid.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
