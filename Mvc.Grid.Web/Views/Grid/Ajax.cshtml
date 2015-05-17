@@ -1,6 +1,4 @@
-﻿@model IEnumerable<PersonModel>
-
-@{
+﻿@{
     ViewBag.Title = "Ajax grid";
 }
 
@@ -14,7 +12,7 @@
             </span>
         </div>
         <div class="widget-content">
-            @Html.AjaxGrid(Url.Action("GridPartial"))
+            @Html.AjaxGrid(Url.Action("GridPartial", new { param = "value" }))
         </div>
     </div>
 </div>
@@ -33,14 +31,16 @@
 <pre>
 <code>
 [<span class="cls">HttpGet</span>]
-<span class="kwd">public</span> <span class="cls">ActionResult</span> Index()
+<span class="kwd">public</span> <span class="cls">ActionResult</span> Index(<span class="cls">String</span> mainParam)
 {
+    <span class="com">// Only main string query values will be visible here.</span>
     <span class="kwd">return</span> View();
 }
 
 [<span class="cls">HttpGet</span>]
-<span class="kwd">public</span> <span class="cls">ActionResult</span> IndexGrid()
-{
+<span class="kwd">public</span> <span class="cls">ActionResult</span> IndexGrid(<span class="cls">String</span> param)
+{    
+    <span class="com">// Only grid string query values will be visible here.</span>
     <span class="kwd">return</span> PartialView(<span class="str">"_IndexGrid"</span>,
         PeopleRepository.GetPeople());
 }
@@ -63,7 +63,8 @@
                 <div class="widget-content">
 <pre>
 <code>
-@@Html.AjaxGrid(Url.Action(<span class="str">"IndexGrid"</span>))
+@@Html.AjaxGrid(Url.Action(<span class="str">"IndexGrid"</span>,
+    <span class="kwd">new</span> { param = <span class="str">"value"</span>}))
 </code>
 </pre>
                 </div>

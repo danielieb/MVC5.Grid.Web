@@ -16,7 +16,7 @@ namespace NonFactors.Mvc.Grid.Web.Controllers
         [HttpGet]
         public ActionResult Ajax()
         {
-            return View(PeopleRepository.GetPeople());
+            return View();
         }
 
         [HttpGet]
