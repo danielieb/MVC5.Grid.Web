@@ -139,7 +139,6 @@
     <Content Include="Scripts\JQueryUI\jquery-ui.js" />
     <Content Include="Scripts\JQuery\jquery.js" />
     <Content Include="Scripts\JQuery\jquery.UI.block.js" />
-    <Content Include="Scripts\JQuery\jquery.nicescroll.js" />
     <Content Include="Scripts\MvcGrid\Cultures\mvc-grid.culture.fr.js" />
     <Content Include="Scripts\MvcGrid\mvc-grid.js" />
     <Content Include="Scripts\MvcGrid\mvc-grid.min.js" />

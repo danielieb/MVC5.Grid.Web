@@ -43,14 +43,3 @@ $(document).ready(function () {
 $(function () {
     $('.mvc-grid').mvcgrid();
 });
-
-// NiceScroll binding
-(function () {
-    $('body').niceScroll({
-        cursoropacitymin: 0.5,
-        cursorborderradius: 0,
-        cursorborder: "none",
-        cursorwidth : 10,
-        zindex: 1000
-    });
-}());
