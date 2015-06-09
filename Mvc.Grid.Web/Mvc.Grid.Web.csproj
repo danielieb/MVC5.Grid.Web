@@ -133,15 +133,23 @@
     <Content Include="Images\JQueryUI\ui-icons_888888_256x240.png" />
     <Content Include="Images\JQueryUI\ui-icons_cd0a0a_256x240.png" />
     <Content Include="Scripts\Bootstrap\bootstrap.js" />
-    <Content Include="Scripts\Bootstrap\bootstrap.min.js" />
-    <Content Include="Scripts\JQueryUI\jquery-ui.min.js" />
-    <Content Include="Scripts\JQuery\jquery.min.js" />
+    <Content Include="Scripts\Bootstrap\bootstrap.min.js">
+      <DependentUpon>bootstrap.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\JQueryUI\jquery-ui.min.js">
+      <DependentUpon>jquery-ui.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\JQuery\jquery.min.js">
+      <DependentUpon>jquery.js</DependentUpon>
+    </Content>
     <Content Include="Scripts\JQueryUI\jquery-ui.js" />
     <Content Include="Scripts\JQuery\jquery.js" />
     <Content Include="Scripts\JQuery\jquery.UI.block.js" />
     <Content Include="Scripts\MvcGrid\Cultures\mvc-grid.culture.fr.js" />
     <Content Include="Scripts\MvcGrid\mvc-grid.js" />
-    <Content Include="Scripts\MvcGrid\mvc-grid.min.js" />
+    <Content Include="Scripts\MvcGrid\mvc-grid.min.js">
+      <DependentUpon>mvc-grid.js</DependentUpon>
+    </Content>
     <Content Include="Scripts\Shared\site.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
