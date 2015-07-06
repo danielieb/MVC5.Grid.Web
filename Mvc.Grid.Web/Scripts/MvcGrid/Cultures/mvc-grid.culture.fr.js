@@ -22,5 +22,14 @@
     Boolean: {
         Yes: 'Oui',
         No: 'Non'
+    },
+    Filter: {
+        Apply: '&#10004;',
+        Remove: '&#10008;'
+    },
+    Operator: {
+        Select: '',
+        And: 'et',
+        Or: 'ou'
     }
 };

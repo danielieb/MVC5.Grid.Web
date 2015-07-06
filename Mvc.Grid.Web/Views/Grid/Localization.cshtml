@@ -25,6 +25,7 @@
                     columns.Add(model => model.Birthday).Titled("Date de naissance");
                     columns.Add(model => model.IsWorking).Titled("Employé");
                 })
+                .MultiFilterable()
                 .Filterable()
                 .Sortable()
             )
@@ -58,6 +59,7 @@
         columns.Add(model => model.Birthday).Titled(<span class="str">"Date de naissance"</span>);
         columns.Add(model => model.IsWorking).Titled(<span class="str">"Employé"</span>);
     })
+    .MultiFilterable()
     .Filterable()
     .Sortable()
 )
@@ -105,6 +107,10 @@
         Boolean: {
             Yes: <span class="str">'Oui'</span>,
             No: <span class="str">'Non'</span>
+        },
+        Filter: {
+            Apply: <span class="str">'&#10004;'</span>,
+            Remove: <span class="str">'&#10008;'</span>
         },
         Operator: {
             Select: '',
