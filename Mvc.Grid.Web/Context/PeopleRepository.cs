@@ -12,6 +12,7 @@ namespace NonFactors.Mvc.Grid.Web.Context
             {
                 new PersonModel
                 {
+                    Id = 1,
                     Name = "Joe",
                     Surname = "Crosswave",
 
@@ -21,6 +22,7 @@ namespace NonFactors.Mvc.Grid.Web.Context
                 },
                 new PersonModel
                 {
+                    Id = 2,
                     Name = "Merry",
                     Surname = "Lisel",
 
@@ -29,6 +31,7 @@ namespace NonFactors.Mvc.Grid.Web.Context
                 },
                 new PersonModel
                 {
+                    Id = 3,
                     Name = "Henry",
                     Surname = "Crux",
 
@@ -38,6 +41,7 @@ namespace NonFactors.Mvc.Grid.Web.Context
                 },
                 new PersonModel
                 {
+                    Id = 4,
                     Name = "Cody",
                     Surname = "Jurut",
 
@@ -47,6 +51,7 @@ namespace NonFactors.Mvc.Grid.Web.Context
                 },
                 new PersonModel
                 {
+                    Id = 5,
                     Name = "Simon",
                     Surname = "Scranton",
 
@@ -55,6 +60,7 @@ namespace NonFactors.Mvc.Grid.Web.Context
                 },
                 new PersonModel
                 {
+                    Id = 6,
                     Name = "Leena",
                     Surname = "Laurent",
 
@@ -64,6 +70,7 @@ namespace NonFactors.Mvc.Grid.Web.Context
                 },
                 new PersonModel
                 {
+                    Id = 7,
                     Name = "Ode",
                     Surname = "Cosmides",
 
@@ -73,6 +80,7 @@ namespace NonFactors.Mvc.Grid.Web.Context
                 },
                 new PersonModel
                 {
+                    Id = 8,
                     Name = "Diandra",
                     Surname = "Mizner",
 
@@ -82,6 +90,7 @@ namespace NonFactors.Mvc.Grid.Web.Context
                 },
                 new PersonModel
                 {
+                    Id = 9,
                     Name = "Pete",
                     Surname = "Cassel",
 
@@ -91,6 +100,7 @@ namespace NonFactors.Mvc.Grid.Web.Context
                 },
                 new PersonModel
                 {
+                    Id = 10,
                     Name = "Nicky",
                     Surname = "Tremblay",
 

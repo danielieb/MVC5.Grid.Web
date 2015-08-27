@@ -4,6 +4,7 @@ namespace NonFactors.Mvc.Grid.Web.Models
 {
     public class PersonModel
     {
+        public Int32 Id { get; set; }
         public String Name { get; set; }
         public String Surname { get; set; }
 
