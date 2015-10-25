@@ -1,5 +1,8 @@
 ﻿using NonFactors.Mvc.Grid.Web.Context;
 using NonFactors.Mvc.Grid.Web.Models;
+using OfficeOpenXml;
+using System;
+using System.Collections.Specialized;
 using System.Linq;
 using System.Web.Mvc;
 
@@ -77,6 +80,65 @@ namespace NonFactors.Mvc.Grid.Web.Controllers
         public ActionResult Localization()
         {
             return View(PeopleRepository.GetPeople());
+        }
+
+        [HttpGet]
+        public ActionResult Export()
+        {
+            return View(CreateExportableGrid());
+        }
+
+        [HttpGet]
+        public ActionResult GetExport()
+        {
+            using (ExcelPackage package = new ExcelPackage())
+            {
+                Int32 row = 2;
+                Int32 col = 1;
+                package.Workbook.Worksheets.Add("Data");
+                IGrid<PersonModel> grid = CreateExportableGrid();
+                ExcelWorksheet sheet = package.Workbook.Worksheets["Data"];
+
+                foreach (IGridColumn column in grid.Columns)
+                {
+                    sheet.Cells[1, col].Value = column.Title;
+                    sheet.Column(col++).Width = 18;
+                }
+
+                foreach (IGridRow gridRow in grid.Rows)
+                {
+                    col = 1;
+                    foreach (IGridColumn column in grid.Columns)
+                        sheet.Cells[row, col++].Value = column.ValueFor(gridRow);
+
+                    row++;
+                }
+
+                Response.AppendHeader("Content-Disposition", "attachment; filename=\"Export.xlsx\"");
+
+                return File(package.GetAsByteArray(), "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet");
+            }
+        }
+
+        private IGrid<PersonModel> CreateExportableGrid()
+        {
+            IGrid<PersonModel> grid = new Grid<PersonModel>(PeopleRepository.GetPeople());
+            grid.Query = new NameValueCollection(Request.QueryString);
+
+            grid.Columns.Add(model => model.Name).Titled("Name");
+            grid.Columns.Add(model => model.Surname).Titled("Surname");
+
+            grid.Columns.Add(model => model.Age).Titled("Age");
+            grid.Columns.Add(model => model.Birthday).Titled("Birth date");
+            grid.Columns.Add(model => model.IsWorking).Titled("Employed");
+
+            foreach (IGridColumn column in grid.Columns)
+            {
+                column.IsFilterable = true;
+                column.IsSortable = true;
+            }
+
+            return grid;
         }
     }
 }
