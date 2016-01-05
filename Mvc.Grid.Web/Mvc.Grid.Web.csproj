@@ -51,12 +51,12 @@
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.8.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="NonFactors.Mvc.Grid, Version=2.2.2.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\NonFactors.Grid.Core.Mvc5.2.2.2\lib\net45\NonFactors.Mvc.Grid.dll</HintPath>
+    <Reference Include="NonFactors.Mvc.Grid, Version=2.2.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\NonFactors.Grid.Core.Mvc5.2.2.3\lib\net45\NonFactors.Mvc.Grid.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -298,6 +298,15 @@
     <Content Include="Views\Column\MultiFiltering.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Views\Grid\Export.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Grid\GlobalSearch.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Grid\_AjaxSearchGrid.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="Views\Shared\MvcGrid\_Pager.cshtml" />
   </ItemGroup>
   <ItemGroup>
@@ -307,13 +316,7 @@
     <Content Include="Views\Shared\MvcGrid\_AjaxGrid.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Grid\Export.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Grid\GlobalSearch.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Grid\_AjaxSearchGrid.cshtml" />
+    <Content Include="Content\FontAwesome\Fonts\fontawesome-webfont.woff2" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
