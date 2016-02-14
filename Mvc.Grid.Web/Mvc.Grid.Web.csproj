@@ -318,6 +318,12 @@
   <ItemGroup>
     <Content Include="Content\FontAwesome\Fonts\fontawesome-webfont.woff2" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Grid\Partial.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Grid\_NestedPersonGrid.cshtml" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
