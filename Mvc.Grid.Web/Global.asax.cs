@@ -1,4 +1,4 @@
-﻿using Mvc.Grid.Web.Filters;
+﻿using NonFactors.Mvc.Grid.Web.Filters;
 using System;
 using System.Web;
 using System.Web.Optimization;

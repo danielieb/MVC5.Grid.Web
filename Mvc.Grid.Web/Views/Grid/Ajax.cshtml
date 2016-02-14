@@ -39,7 +39,7 @@
 
 [<span class="cls">HttpGet</span>]
 <span class="kwd">public</span> <span class="cls">ActionResult</span> IndexGrid(<span class="cls">String</span> param)
-{    
+{
     <span class="com">// Only grid string query values will be visible here.</span>
     <span class="kwd">return</span> PartialView(<span class="str">"_IndexGrid"</span>,
         PeopleRepository.GetPeople());

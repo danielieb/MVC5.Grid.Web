@@ -39,8 +39,8 @@
 
 [<span class="cls">HttpGet</span>]
 <span class="kwd">public</span> <span class="cls">ActionResult</span> IndexGrid(<span class="cls">String</span> search)
-{    
-    <span class="kwd">return</span> PartialView(<span class="str">"_IndexGrid"</span>, PeopleRepository.GetPeople(search));
+{
+    <span class="kwd">return</span> PartialView(<span class="str">"_IndexGrid"</span>, <span class="cls">PeopleRepository</span>.GetPeople(search));
 }
 </code>
 </pre>

@@ -69,7 +69,7 @@
                 </div>
                 <div class="widget-content">
 <pre>
-<code>    
+<code>
 @@using NonFactors.Mvc.Grid;
 
 @@model <span class="cls">IEnumerable</span>&lt;<span class="cls">PersonModel</span>&gt;
@@ -152,7 +152,7 @@
             @@if (Model.Rows.Count() &gt; 0)
             {
                 foreach (IGridRow row in Model.Rows)
-                {    
+                {
                     PersonModel person = row.Model as PersonModel;
                     &lt;tr class="mvc-grid-row @@row.CssClasses"&gt;
                         &lt;td&gt;Parent&lt;/td&gt;

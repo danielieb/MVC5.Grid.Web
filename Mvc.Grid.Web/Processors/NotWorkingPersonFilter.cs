@@ -2,7 +2,7 @@
 using NonFactors.Mvc.Grid.Web.Models;
 using System.Linq;
 
-namespace Mvc.Grid.Web.Processors
+namespace NonFactors.Mvc.Grid.Web.Processors
 {
     public class NotWorkingPersonFilter : IGridProcessor<PersonModel>
     {
