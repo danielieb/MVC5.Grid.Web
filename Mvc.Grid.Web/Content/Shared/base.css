@@ -181,7 +181,7 @@ pre {
 }
 
 .pagination {
-    margin-bottom: 0;
+    margin-bottom: -12px;
 }
 
     .pagination > li > span,
@@ -200,18 +200,18 @@ pre {
         border-color: rgba(131, 174, 211, 1);
     }
 
-.mvc-grid-header-title {
-    vertical-align: sub;
-}
-
-.mvc-grid-sort {
-    vertical-align: middle;
-}
-
 .grid-search {
     background-color: rgba(255, 255, 255, 0.7);
     margin-left: 15px;
     text-align: center;
     color: #000000;
     border: none;
+}
+
+.rows-per-page {
+    display: inline-block;
+}
+
+.rows-per-page select {
+    height: 33px;
 }

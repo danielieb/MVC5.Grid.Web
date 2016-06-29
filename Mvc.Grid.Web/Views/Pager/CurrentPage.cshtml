@@ -1,14 +1,14 @@
 ﻿@model IEnumerable<PersonModel>
 
 @{
-    ViewBag.Title = "Empty grid text";
+    ViewBag.Title = "Pager initial page";
 }
 
 <div class="example content-block">
     <div class="widget">
         <div class="widget-header">
             <i class="fa fa-bars"></i>
-            Grid with no rows
+            Grid
             <span class="widget-buttons">
                 <i class="content-toggle"></i>
             </span>
@@ -25,12 +25,17 @@
                     columns.Add(model => model.Birthday).Titled("Birth date");
                     columns.Add(model => model.IsWorking).Titled("Employed");
                 })
-                .Empty("No data found")
+                .Pageable(pager =>
+                {
+                    pager.CurrentPage = 2;
+                    pager.RowsPerPage = 2;
+                })
             )
-
         </div>
     </div>
 </div>
+
+
 <div class="example-code content-block">
     <div class="widget">
         <div class="widget-header">
@@ -58,7 +63,11 @@
         columns.Add(model => model.Birthday).Titled(<span class="str">"Birth date"</span>);
         columns.Add(model => model.IsWorking).Titled(<span class="str">"Employed"</span>);
     })
-    .Empty(<span class="str">"No data found"</span>)
+    .Pageable(pager =>
+    {
+        pager.CurrentPage = 2;
+        pager.RowsPerPage = 2;
+    })
 )
 </code>
 </pre>

@@ -8,7 +8,6 @@
 }
 
 <div class="mvc-grid-pager @Model.CssClasses">
-    <input class="mvc-grid-pager-rows" type="hidden" value="@Model.RowsPerPage" />
     @if (totalPages > 1)
     {
         <ul class="pagination">
@@ -44,5 +43,20 @@
                 <li class="disabled"><span>&raquo;</span></li>
             }
         </ul>
+        <div class="rows-per-page">
+            <select class="mvc-grid-pager-rows">
+                @for (Int32 i = 1; i <= 3; i++)
+                {
+                    if (Model.RowsPerPage == i)
+                    {
+                        <option value="@i" selected>@i</option>
+                    }
+                    else
+                    {
+                        <option value="@i">@i</option>
+                    }
+                }
+            </select>
+        </div>
     }
 </div>

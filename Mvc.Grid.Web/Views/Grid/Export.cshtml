@@ -59,7 +59,7 @@
             sheet.Column(col++).Width = 18;
         }
 
-        <span class="kwd">foreach</span> (<span class="cls">IGridRow</span> gridRow <span class="kwd">in</span> grid.Rows)
+        <span class="kwd">foreach</span> (<span class="cls">IGridRow&lt;PersonModel&gt;</span> gridRow <span class="kwd">in</span> grid.Rows)
         {
             col = 1;
             <span class="kwd">foreach</span> (<span class="cls">IGridColumn</span> column <span class="kwd">in</span> grid.Columns)
