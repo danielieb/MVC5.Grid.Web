@@ -16,11 +16,5 @@ namespace NonFactors.Mvc.Grid.Web.Controllers
         {
             return View();
         }
-
-        [HttpGet]
-        public ActionResult Migrations()
-        {
-            return View();
-        }
     }
 }
