@@ -253,9 +253,6 @@
     <Content Include="Views\Pager\PagesToDisplay.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Pager\InitialPage.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Views\Pager\RowsPerPage.cshtml" />
   </ItemGroup>
   <ItemGroup>
