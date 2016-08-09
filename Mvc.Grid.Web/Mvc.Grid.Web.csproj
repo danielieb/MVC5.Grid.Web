@@ -301,9 +301,6 @@
     <Content Include="Views\Grid\_AjaxSearchGrid.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Grid\_NestedPersonGrid.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Views\Shared\MvcGrid\_Pager.cshtml" />
   </ItemGroup>
   <ItemGroup>
