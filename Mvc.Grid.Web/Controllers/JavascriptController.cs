@@ -1,4 +1,5 @@
 ﻿using NonFactors.Mvc.Grid.Web.Context;
+using System;
 using System.Threading;
 using System.Web.Mvc;
 
@@ -18,10 +19,16 @@ namespace NonFactors.Mvc.Grid.Web.Controllers
             return View();
         }
 
-        [HttpGet]
-        public ActionResult ReloadGrid()
+        [AcceptVerbs(HttpVerbs.Get | HttpVerbs.Post)]
+        public ActionResult ReloadGrid(String name)
         {
-            return PartialView("_ReloadGrid", PeopleRepository.GetPeople());
+            return PartialView("_ReloadGrid", PeopleRepository.GetPeople(name));
+        }
+
+        [HttpGet]
+        public ActionResult RequestType()
+        {
+            return View();
         }
 
         [HttpGet]

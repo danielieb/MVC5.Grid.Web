@@ -26,7 +26,7 @@
 
                     columns.Add(model => model.Age).Titled("Bolded age").Css("bolded");
                     columns.Add(model => model.Birthday).Titled("Birth date");
-                    columns.Add(model => model.IsWorking).Titled("Employed");
+                    columns.Add(model => model.IsWorking).Titled("Employed").Css("col-xs-1");
                 })
             )
         </div>
@@ -61,7 +61,7 @@
 
         columns.Add(model => model.Age).Titled(<span class="str">"Bolded age"</span>).Css(<span class="str">"bolded"</span>);
         columns.Add(model => model.Birthday).Titled(<span class="str">"Birth date"</span>);
-        columns.Add(model => model.IsWorking).Titled(<span class="str">"Employed"</span>);
+        columns.Add(model => model.IsWorking).Titled(<span class="str">"Employed"</span>).Css(<span class="str">"col-xs-1"</span>);
     })
 )
 </code>
