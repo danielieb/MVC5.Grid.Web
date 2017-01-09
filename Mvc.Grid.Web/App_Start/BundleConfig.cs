@@ -13,6 +13,7 @@ namespace NonFactors.Mvc.Grid.Web
         {
             bundles.Add(new ScriptBundle("~/Scripts/Page/Bundle")
                 .Include("~/Scripts/JQuery/*.js")
+                .Include("~/Scripts/JQueryUI/*.js")
                 .Include("~/Scripts/Bootstrap/*.js")
                 .Include("~/Scripts/MvcGrid/*.js")
                 .Include("~/Scripts/Shared/*.js"));
