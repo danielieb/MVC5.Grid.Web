@@ -1,5 +1,4 @@
-﻿using NonFactors.Mvc.Grid;
-using System.Linq.Expressions;
+﻿using System.Linq.Expressions;
 
 namespace NonFactors.Mvc.Grid.Web.Filters
 {

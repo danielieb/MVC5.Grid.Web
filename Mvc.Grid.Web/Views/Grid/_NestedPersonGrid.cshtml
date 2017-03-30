@@ -43,7 +43,7 @@
             </tr>
         </thead>
         <tbody>
-            @if (Model.Rows.Count() > 0)
+            @if (Model.Rows.Any())
             {
                 foreach (IGridRow<PersonModel> row in Model.Rows)
                 {

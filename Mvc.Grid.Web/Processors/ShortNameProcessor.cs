@@ -1,5 +1,4 @@
-﻿using NonFactors.Mvc.Grid;
-using NonFactors.Mvc.Grid.Web.Models;
+﻿using NonFactors.Mvc.Grid.Web.Models;
 using System.Linq;
 
 namespace NonFactors.Mvc.Grid.Web.Processors
