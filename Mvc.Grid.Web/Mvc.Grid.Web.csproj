@@ -329,6 +329,9 @@
   <ItemGroup>
     <Content Include="Views\Javascript\RequestType.cshtml" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Grid\Configuration.cshtml" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
