@@ -53,7 +53,7 @@
     .Grid(Model)
     .Build(columns =>
     {
-        columns.Add(model => Html.CheckBox(<span class="str">"Person_"</span> + model.Id));    
+        columns.Add(model => Html.CheckBox(<span class="str">"Person_"</span> + model.Id));
         columns.Add(model => <span class="str">"&lt;button data-id=\""</span> + model.Id + <span class="str">"\"&gt;Edit&lt;/button&gt;"</span>).Encoded(<span class="kwd">false</span>);
 
         columns.Add(model => model.Name).Titled(<span class="str">"Name"</span>);
