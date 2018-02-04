@@ -117,8 +117,6 @@
     <Content Include="Content\Bootstrap\bootstrap.css" />
     <Content Include="Content\FontAwesome\font-awesome.css" />
     <Content Include="Content\JQueryUI\jquery-ui.css" />
-    <Content Include="Content\FontAwesome\Fonts\fontawesome-webfont.svg" />
-    <Content Include="Content\Bootstrap\Fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Content\MvcGrid\mvc-grid.css" />
     <Content Include="Global.asax" />
     <Content Include="Content\Shared\base.css" />
@@ -236,12 +234,6 @@
     <Content Include="Content\FontAwesome\Fonts\fontawesome-webfont.woff" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\FontAwesome\Fonts\fontawesome-webfont.ttf" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Content\FontAwesome\Fonts\fontawesome-webfont.eot" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Content\FontAwesome\Fonts\FontAwesome.otf" />
   </ItemGroup>
   <ItemGroup>
@@ -272,16 +264,7 @@
     <Content Include="Views\Filter\Unregister.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\Bootstrap\Fonts\glyphicons-halflings-regular.woff2" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Content\Bootstrap\Fonts\glyphicons-halflings-regular.woff" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Content\Bootstrap\Fonts\glyphicons-halflings-regular.ttf" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Content\Bootstrap\Fonts\glyphicons-halflings-regular.eot" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Grid\MultiFiltering.cshtml" />
@@ -306,9 +289,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Shared\MvcGrid\_AjaxGrid.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Content\FontAwesome\Fonts\fontawesome-webfont.woff2" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Grid\Partial.cshtml" />
