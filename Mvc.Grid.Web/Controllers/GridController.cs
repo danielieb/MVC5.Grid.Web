@@ -158,12 +158,6 @@ namespace NonFactors.Mvc.Grid.Web.Controllers
             return View(PeopleRepository.GetPeople());
         }
 
-        [HttpGet]
-        public ActionResult Configuration()
-        {
-            return View(PeopleRepository.GetPeople());
-        }
-
 
         private IGrid<PersonModel> CreateExportableGrid()
         {
