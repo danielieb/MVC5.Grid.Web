@@ -13,6 +13,8 @@ namespace NonFactors.Mvc.Grid.Web
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
+            (MvcGrid.Filters as GridFilters).BooleanTrueOptionText = () => "True";
+            (MvcGrid.Filters as GridFilters).BooleanFalseOptionText = () => "False";
             MvcGrid.Filters.Register(typeof(Int32), "contains", typeof(NumberContainsFilter));
         }
     }

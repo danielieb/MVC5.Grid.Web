@@ -34,15 +34,33 @@
 </div>
 
 <div class="row">
-    <div class="widget code col">
-        <div class="widget-header">
-            <div class="fa fa-code"></div>
-            <span>View</span>
-            <div class="widget-buttons">
-                <span class="fa fa-minus content-toggle"></span>
+    <div class="col">
+        <div class="widget code">
+            <div class="widget-header">
+                <div class="fa fa-code"></div>
+                <span>Startup</span>
+                <div class="widget-buttons">
+                    <span class="fa fa-minus content-toggle"></span>
+                </div>
+            </div>
+            <div class="widget-content">
+<pre>
+<code>
+(<span class="cls">MvcGrid</span>.Filters <span class="kwd">as</span> <span class="cls">GridFilters</span>).BooleanTrueOptionText = () => Localize(<span class="str">"true"</span>);
+(<span class="cls">MvcGrid</span>.Filters <span class="kwd">as</span> <span class="cls">GridFilters</span>).BooleanFalseOptionText = () => Localize(<span class="str">"false"</span>);
+</code>
+</pre>
             </div>
         </div>
-        <div class="widget-content">
+        <div class="widget code">
+            <div class="widget-header">
+                <div class="fa fa-code"></div>
+                <span>View</span>
+                <div class="widget-buttons">
+                    <span class="fa fa-minus content-toggle"></span>
+                </div>
+            </div>
+            <div class="widget-content">
 <pre>
 <code>
 @@model <span class="cls">IEnumerable</span>&lt;<span class="cls">Person</span>&gt;
@@ -66,6 +84,7 @@
 )
 </code>
 </pre>
+            </div>
         </div>
     </div>
     <div class="widget code col">
@@ -106,7 +125,11 @@
         },
         enum: {
             <span class="str">'equals'</span>: <span class="str">'Egale'</span>,
-            <span class="str">'not-equals'</span>: <span class="str">'Pas égal'</span>,
+            <span class="str">'not-equals'</span>: <span class="str">'Pas égal'</span>
+        },
+        boolean: {
+            <span class="str">'equals'</span>: <span class="str">'Egale'</span>,
+            <span class="str">'not-equals'</span>: <span class="str">'Pas égal'</span>
         },
         filter: {
             <span class="str">'apply'</span>: <span class="str">'&#10004;'</span>,
