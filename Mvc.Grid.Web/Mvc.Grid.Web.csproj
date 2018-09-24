@@ -97,32 +97,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_Start\BundleConfig.cs" />
-    <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Context\PeopleRepository.cs" />
     <Compile Include="Controllers\ColumnController.cs" />
     <Compile Include="Controllers\FilterController.cs" />
-    <Compile Include="Controllers\JavascriptController.cs" />
     <Compile Include="Controllers\GridController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\JavascriptController.cs" />
     <Compile Include="Controllers\PagerController.cs" />
-    <Compile Include="Filters\NumberContainsFilter.cs" />
-    <Compile Include="Global.asax.cs">
-      <DependentUpon>Global.asax</DependentUpon>
-    </Compile>
-    <Compile Include="Models\MaritalStatus.cs" />
-    <Compile Include="Models\Person.cs" />
-    <Compile Include="Processors\NotWorkingPersonFilter.cs" />
-    <Compile Include="Processors\ShortNameProcessor.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\Bootstrap\bootstrap.css" />
-    <Content Include="Content\FontAwesome\font-awesome.css" />
-    <Content Include="Content\JQueryUI\jquery-ui.css" />
-    <Content Include="Content\MvcGrid\mvc-grid.css" />
-    <Content Include="Global.asax" />
-    <Content Include="Content\Shared\base.css" />
     <Content Include="Images\background.jpg" />
     <Content Include="Images\JQueryUI\ui-bg_glass_55_fbf9ee_1x400.png" />
     <Content Include="Images\JQueryUI\ui-bg_glass_65_ffffff_1x400.png" />
@@ -135,12 +117,99 @@
     <Content Include="Images\JQueryUI\ui-icons_454545_256x240.png" />
     <Content Include="Images\JQueryUI\ui-icons_888888_256x240.png" />
     <Content Include="Images\JQueryUI\ui-icons_cd0a0a_256x240.png" />
-    <Content Include="Scripts\JQueryUI\jquery-ui.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\Bootstrap\bootstrap.css" />
+    <Content Include="Content\FontAwesome\font-awesome.css" />
+    <Content Include="Content\FontAwesome\Fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\JQueryUI\jquery-ui.css" />
+    <Content Include="Content\MvcGrid\Fonts\GridGlyphs.woff" />
+    <Content Include="Content\MvcGrid\mvc-grid.css" />
+    <Content Include="Content\Shared\base.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scripts\_references.js" />
     <Content Include="Scripts\JQuery\jquery.js" />
+    <Content Include="Scripts\JQueryUI\jquery-ui.js" />
     <Content Include="Scripts\MvcGrid\Cultures\mvc-grid.culture.fr.js" />
     <Content Include="Scripts\MvcGrid\mvc-grid.js" />
     <Content Include="Scripts\Shared\site.js" />
-    <Content Include="Scripts\_references.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Column\CustomFilter.cshtml" />
+    <Content Include="Views\Column\Encoding.cshtml" />
+    <Content Include="Views\Column\Filtering.cshtml" />
+    <Content Include="Views\Column\FilterOptions.cshtml" />
+    <Content Include="Views\Column\FirstSort.cshtml" />
+    <Content Include="Views\Column\Formatting.cshtml" />
+    <Content Include="Views\Column\InitialSort.cshtml" />
+    <Content Include="Views\Column\MultiFiltering.cshtml" />
+    <Content Include="Views\Column\RenderingValue.cshtml" />
+    <Content Include="Views\Column\Sorting.cshtml" />
+    <Content Include="Views\Column\Styling.cshtml" />
+    <Content Include="Views\Column\Title.cshtml" />
+    <Content Include="Views\Filter\Register.cshtml" />
+    <Content Include="Views\Filter\Unregister.cshtml" />
+    <Content Include="Views\Grid\_AjaxGrid.cshtml" />
+    <Content Include="Views\Grid\_AjaxSearchGrid.cshtml" />
+    <Content Include="Views\Grid\_GridFooter.cshtml" />
+    <Content Include="Views\Grid\_NestedPersonGrid.cshtml" />
+    <Content Include="Views\Grid\_SourceUrlGrid.cshtml" />
+    <Content Include="Views\Grid\Ajax.cshtml" />
+    <Content Include="Views\Grid\EmptyText.cshtml" />
+    <Content Include="Views\Grid\Export.cshtml" />
+    <Content Include="Views\Grid\Filtering.cshtml" />
+    <Content Include="Views\Grid\FilterModes.cshtml" />
+    <Content Include="Views\Grid\Footer.cshtml" />
+    <Content Include="Views\Grid\GlobalSearch.cshtml" />
+    <Content Include="Views\Grid\HtmlAttributes.cshtml" />
+    <Content Include="Views\Grid\Id.cshtml" />
+    <Content Include="Views\Grid\Localization.cshtml" />
+    <Content Include="Views\Grid\ManualPaging.cshtml" />
+    <Content Include="Views\Grid\MultiFiltering.cshtml" />
+    <Content Include="Views\Grid\Multiple.cshtml" />
+    <Content Include="Views\Grid\Paging.cshtml" />
+    <Content Include="Views\Grid\Partial.cshtml" />
+    <Content Include="Views\Grid\RowAttributes.cshtml" />
+    <Content Include="Views\Grid\RowProcessing.cshtml" />
+    <Content Include="Views\Grid\RowStyling.cshtml" />
+    <Content Include="Views\Grid\Sorting.cshtml" />
+    <Content Include="Views\Grid\SourceUrl.cshtml" />
+    <Content Include="Views\Grid\Styling.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\Installation.cshtml" />
+    <Content Include="Views\Javascript\_ReloadEventsGrid.cshtml" />
+    <Content Include="Views\Javascript\_ReloadGrid.cshtml" />
+    <Content Include="Views\Javascript\Api.cshtml" />
+    <Content Include="Views\Javascript\Reload.cshtml" />
+    <Content Include="Views\Javascript\ReloadEvents.cshtml" />
+    <Content Include="Views\Javascript\RequestType.cshtml" />
+    <Content Include="Views\Javascript\RowClicked.cshtml" />
+    <Content Include="Views\Pager\CurrentPage.cshtml" />
+    <Content Include="Views\Pager\PageSizes.cshtml" />
+    <Content Include="Views\Pager\PagesToDisplay.cshtml" />
+    <Content Include="Views\Pager\RowsPerPage.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Shared\MvcGrid\_Grid.cshtml" />
+    <Content Include="Views\Shared\MvcGrid\_Pager.cshtml" />
+    <Content Include="Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Context\PeopleRepository.cs" />
+    <Compile Include="Filters\NumberContainsFilter.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MaritalStatus.cs" />
+    <Compile Include="Models\Person.cs" />
+    <Compile Include="Processors\NotWorkingPersonFilter.cs" />
+    <Compile Include="Processors\ShortNameProcessor.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Content Include="Global.asax" />
+    <Content Include="packages.config" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -148,183 +217,12 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
-    <Content Include="Views\Web.config" />
-    <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Column\RenderingValue.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Column\Filtering.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Column\CustomFilter.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Column\FirstSort.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Column\Sorting.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Column\Encoding.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Column\Formatting.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Column\Styling.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Column\Title.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Grid\RowProcessing.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Grid\Ajax.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Grid\_AjaxGrid.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Grid\Filtering.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Grid\Sorting.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Grid\RowStyling.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Grid\Styling.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Grid\EmptyText.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Grid\Multiple.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Grid\Paging.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Home\Installation.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Grid\Localization.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Content\FontAwesome\Fonts\fontawesome-webfont.woff" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Column\InitialSort.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Pager\PagesToDisplay.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Pager\RowsPerPage.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Javascript\RowClicked.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Javascript\Reload.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Javascript\_ReloadGrid.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Javascript\ReloadEvents.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Filter\Register.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Filter\Unregister.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Grid\MultiFiltering.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Column\MultiFiltering.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Grid\Export.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Grid\GlobalSearch.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Grid\_AjaxSearchGrid.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Grid\Partial.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Grid\_NestedPersonGrid.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Pager\CurrentPage.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Javascript\RequestType.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Grid\Footer.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Grid\_GridFooter.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Grid\ManualPaging.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Grid\HtmlAttributes.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Javascript\Api.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Shared\MvcGrid\_Pager.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Shared\MvcGrid\_Grid.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Content\MvcGrid\Fonts\GridGlyphs.woff" />
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Column\FilterOptions.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Grid\FilterModes.cshtml" />
-    <Content Include="Views\Grid\Id.cshtml" />
-    <Content Include="Views\Grid\RowAttributes.cshtml" />
-    <Content Include="Views\Grid\SourceUrl.cshtml" />
-    <Content Include="Views\Grid\_SourceUrlGrid.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Javascript\_ReloadEventsGrid.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Pager\PageSizes.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
-  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
   <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
@@ -348,10 +246,4 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target> -->
 </Project>
