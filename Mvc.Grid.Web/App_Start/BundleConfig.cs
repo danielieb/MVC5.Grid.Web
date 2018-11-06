@@ -12,15 +12,12 @@ namespace NonFactors.Mvc.Grid.Web
         private static void RegisterScripts(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/Scripts/Page/Bundle")
-                .Include("~/Scripts/JQuery/*.js")
-                .Include("~/Scripts/JQueryUI/*.js")
                 .Include("~/Scripts/MvcGrid/*.js")
                 .Include("~/Scripts/Shared/*.js"));
         }
         private static void RegisterStyles(BundleCollection bundles)
         {
             bundles.Add(new StyleBundle("~/Content/Page/Bundle")
-                .Include("~/Content/JQueryUI/*.css")
                 .Include("~/Content/Bootstrap/*.css")
                 .Include("~/Content/FontAwesome/*.css")
                 .Include("~/Content/MvcGrid/*.css")
