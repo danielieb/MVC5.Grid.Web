@@ -9,7 +9,7 @@
         <div class="fa fa-bars"></div>
         <span>Exporting grid page data</span>
         <div class="widget-buttons">
-            <a class="fa fa-file-excel-o" href="@(Url.Action("GetExport") + ViewContext.HttpContext.Request.QueryString)"></a>
+            <a class="fa fa-file-excel-o" href="@(Url.Action("GetExport") + "?" + ViewContext.HttpContext.Request.QueryString)"></a>
             <span class="fa fa-minus content-toggle"></span>
         </div>
     </div>
@@ -112,7 +112,7 @@
 <code>
 @@model <span class="cls">IGrid</span>&lt;<span class="cls">Person</span>&gt;
 
-&lt;a href="@@(Url.Action(<span class="str">"ExportIndex"</span>) + ViewContext.HttpContext.Request.QueryString)"&gt;Export&lt;/a&gt;
+&lt;a href="@@(Url.Action(<span class="str">"ExportIndex"</span>) + <span class="str">"?"</span> + ViewContext.HttpContext.Request.QueryString)"&gt;Export&lt;/a&gt;
 
 @@(<span class="kwd">new</span> <span class="cls">HtmlGrid</span>&lt;<span class="cls">Person</span>&gt;(Html, Model))
 </code>
