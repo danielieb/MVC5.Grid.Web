@@ -187,17 +187,18 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Context\PeopleRepository.cs" />
+    <Content Include="favicon.ico" />
     <Compile Include="Filters\NumberContainsFilter.cs" />
+    <Content Include="Global.asax" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\MaritalStatus.cs" />
     <Compile Include="Models\Person.cs" />
+    <Content Include="packages.config" />
     <Compile Include="Processors\NotWorkingPersonFilter.cs" />
     <Compile Include="Processors\ShortNameProcessor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Content Include="Global.asax" />
-    <Content Include="packages.config" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
