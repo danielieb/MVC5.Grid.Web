@@ -40,9 +40,9 @@
             <div class="widget-content">
 <pre>
 <code>
-<span class="com">@@* Should only include grid declaration *@@</span>
-
 @@model <span class="cls">IEnumerable</span>&lt;<span class="cls">Person</span>&gt;
+
+<span class="com">@@* Should only include grid declaration *@@</span>
 
 @@(Html
     .Grid(Model)
@@ -102,7 +102,7 @@ document.addEventListener(<span class="str">'reloadfail'</span>, <span class="kw
 [<span class="cls">HttpGet</span>]
 <span class="kwd">public</span> <span class="cls">PartialViewResult</span> IndexGrid()
 {
-    <span class="kwd">return</span> PartialView(<span class="str">"_IndexGrid"</span>, <span class="cls">PeopleRepository</span>.GetPeople());
+    <span class="kwd">return</span> PartialView(<span class="str">"_IndexGrid"</span>, repository.GetPeople());
 }
 </code>
 </pre>

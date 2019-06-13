@@ -36,7 +36,7 @@
 [<span class="cls">AcceptVerbs</span>(<span class="cls">HttpVerbs</span>.Get | <span class="cls">HttpVerbs</span>.Post)]
 <span class="kwd">public</span> <span class="cls">PartialViewResult</span> IndexGrid(<span class="cls">String</span> name)
 {
-    <span class="kwd">return</span> PartialView(<span class="str">"_IndexGrid"</span>, <span class="cls">PeopleRepository</span>.GetPeople(name));
+    <span class="kwd">return</span> PartialView(<span class="str">"_IndexGrid"</span>, repository.Filter(name));
 }
 </code>
 </pre>
@@ -84,9 +84,9 @@ document.getElementById(<span class="str">'ContentRefresh'</span>).addEventListe
             <div class="widget-content">
 <pre>
 <code>
-<span class="com">@@* Should only include grid declaration *@@</span>
-
 @@model <span class="cls">IEnumerable</span>&lt;<span class="cls">Person</span>&gt;
+
+<span class="com">@@* Should only include grid declaration *@@</span>
 
 @@(Html
     .Grid(Model)

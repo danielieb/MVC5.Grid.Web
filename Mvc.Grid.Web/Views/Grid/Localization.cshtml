@@ -23,8 +23,7 @@
                 columns.Add(model => model.IsWorking).Titled("Employé");
             })
             .Empty("Aucune donnée disponible")
-            .MultiFilterable()
-            .Filterable()
+            .Filterable(GridFilterType.Double)
             .Sortable()
         )
     </div>
@@ -69,8 +68,7 @@
         columns.Add(model => model.IsWorking).Titled(<span class="str">"Employé"</span>);
     })
     .Empty(<span class="str">"Aucune donnée disponible"</span>)
-    .MultiFilterable()
-    .Filterable()
+    .Filterable(<span class="cls">GridFilterType</span>.Double)
     .Sortable()
 )
 </code>
