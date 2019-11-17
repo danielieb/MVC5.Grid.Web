@@ -1,4 +1,5 @@
-﻿<!doctype html>
+﻿@using System.Web.Routing
+<!doctype html>
 <html>
 <head>
     <meta charset="UTF-8" />
@@ -69,7 +70,8 @@
                     @Html.ActionLink("Grid row processing", "RowProcessing", "Grid")
                 </li>
                 <li>
-                    @Html.ActionLink("Grid no data found text", "EmptyText", "Grid")
+                    @{ RouteValueDictionary route = new RouteValueDictionary(new Dictionary<String, Object> { { "name-equals", "Xena" }}); }
+                    @Html.ActionLink("Grid no data found text", "EmptyText", "Grid", route, null)
                 </li>
                 <li>
                     @Html.ActionLink("Grid footer", "Footer", "Grid")

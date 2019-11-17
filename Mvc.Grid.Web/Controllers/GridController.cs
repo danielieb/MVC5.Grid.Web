@@ -94,7 +94,7 @@ namespace NonFactors.Mvc.Grid.Web.Controllers
         [HttpGet]
         public ViewResult EmptyText()
         {
-            return View(Enumerable.Empty<Person>());
+            return View(PeopleRepository.GetPeople());
         }
 
         [HttpGet]
