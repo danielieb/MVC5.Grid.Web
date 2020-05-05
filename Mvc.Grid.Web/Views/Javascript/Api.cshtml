@@ -84,25 +84,25 @@
 <code>
 <span class="kwd">var</span> grid = document.querySelector(<span class="str">'.mvc-grid'</span>);
 
-<span class="com">// Triggered when grid's row is clicked</span>
-grid.addEventListener(<span class="str">'rowclick'</span>, <span class="kwd">function</span>(e) {
+<span class="com">// Triggered when grid's row is clicked. It's recommended to use event delegation in ajax scenarios.</span>
+document.addEventListener(<span class="str">'rowclick'</span>, <span class="kwd">function</span>(e) {
     <span class="com">e.detail.data - clicked row's data from columns.</span>
     <span class="com">e.detail.grid - grid's instance.</span>
     <span class="com">e.detail.originalEvent - original tr click event which triggered the rowclick.</span>
 });
 
-<span class="com">// Triggered before grid starts loading</span>
-grid.addEventListener(<span class="str">'reloadstart'</span>, <span class="kwd">function</span> (e) {
+<span class="com">// Triggered before grid starts loading. It's recommended to use event delegation in ajax scenarios.</span>
+document.addEventListener(<span class="str">'reloadstart'</span>, <span class="kwd">function</span> (e) {
     <span class="com">e.detail.grid - grid's instance.</span>
 });
 
-<span class="com">// Triggered after grid stop loading</span>
-grid.addEventListener(<span class="str">'reloadend'</span>, <span class="kwd">function</span> (e) {
+<span class="com">// Triggered after grid stop loading. It's recommended to use event delegation in ajax scenarios.</span>
+document.addEventListener(<span class="str">'reloadend'</span>, <span class="kwd">function</span> (e) {
     <span class="com">e.detail.grid - grid's instance.</span>
 });
 
-<span class="com">// Triggered after grid reload fails</span>
-grid.addEventListener(<span class="str">'reloadfail'</span>, <span class="kwd">function</span> (e) {
+<span class="com">// Triggered after grid reload fails. It's recommended to use event delegation in ajax scenarios.</span>
+document.addEventListener(<span class="str">'reloadfail'</span>, <span class="kwd">function</span> (e) {
     <span class="com">e.detail.result - failed ajax response result.</span>
     <span class="com">e.detail.grid - grid's instance.</span>
 });
